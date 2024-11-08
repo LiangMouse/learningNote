@@ -1,6 +1,7 @@
 - HTML
 
-  - [常用标签概述](HTML/常用标签概述.md)
+  - [HTML 语义化](HTML/标签语义化.md)
+  - [Canvas 基础](HTML/Canvas基础.md)
 
 - CSS
 
@@ -16,6 +17,7 @@
   - [ES6 新特性](JavaScript/ES6新特性.md)
   - [原型与原型链](JavaScript/原型与原型链.md)
   - [事件循环](JavaScript/事件循环.md)
+  - [常用数组方法](JavaScript/常用数组方法.md)
 - Browser
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
