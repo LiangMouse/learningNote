@@ -38,11 +38,6 @@ body::before {
 console.log("Hello World");
 ```
 
-```php
-/* php */
-echo "Hello World";
-```
-
 ```python
 """ python """
 print("Hello World");
@@ -71,19 +66,4 @@ fmt.Printf("Hello World");
 ```shell
 # shell #
 echo "Hello World";
-```
-
-```c#
-/* C# */
-Console.WriteLine("Hello World");
-```
-
-```vbscript
-/* vbscript */
-MsgBox("Hello,World!")
-```
-
-```lua
---[[ Lua ]]
-print("hello world");
 ```
