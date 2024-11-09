@@ -18,10 +18,10 @@
   - [原型与原型链](JavaScript/原型与原型链.md)
   - [事件循环](JavaScript/事件循环.md)
   - [常用数组方法](JavaScript/常用数组方法.md)
+  - [apply,bind 和 call](JavaScript/apply,bind和call.md)
 - Browser
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
-  - [TCP 三次握手](Browser/TCP三次握手.md)
   - [HTTP 缓存](Browser/HTTP缓存.md)
   - [GET 和 POST 的区别](Browser/GET和POST的区别.md)
   - [CDN 缓存的理解](Browser/CDN缓存的理解.md)
