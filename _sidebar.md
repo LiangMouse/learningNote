@@ -24,9 +24,11 @@
   - [跨域问题与解决方案](Browser/跨域问题.md)
   - [HTTP 缓存](Browser/HTTP缓存.md)
   - [GET 和 POST 的区别](Browser/GET和POST的区别.md)
-  - [CDN 缓存的理解](Browser/CDN缓存的理解.md)
+  - [CDN 的作用和原理](Browser/CDN缓存的理解.md)
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
 
+- TypeScript
+  - [Ts 类型基础](TypeScript/基础类型.md)
 - Vue
 
   - [Vue 中 key 的作用](Vue/Vue中key的作用.md)
@@ -43,3 +45,6 @@
 
   - [Git 基础](Plugin/Git基础.md)
   - [初探 webpack 之编写 loader](Plugin/初探webpack之编写loader.md)
+
+- 前端工程化
+  - []
