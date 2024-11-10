@@ -43,3 +43,5 @@ fun()
 ```
 
 优点：多重继承 缺点：只能继承父类实例的属性和方法，不能继承原型上的属性和方法
+
+> 参考资料: <a href="https://www.bilibili.com/video/BV1944y1q7N4/?spm_id_from=333.337.search-card.all.click&vd_source=39b8f20f3a6b36dba170ad1d5d767c9d">这个视频真是讲的很通透了，up 说话也蛮有意思~</a>

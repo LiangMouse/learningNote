@@ -5,7 +5,7 @@
 
 - CSS
 
-  - [垂直居中布局](CSS/布局垂直居中.md)
+  - [垂直居中布局](CSS/垂直居中布局.md)
   - [伪类与伪元素](CSS/伪类与伪元素.md)
   - [CSS 盒子模型](CSS/CSS盒子模型.md)
   - [CSS 样式优先级](CSS/CSS样式优先级.md)
@@ -18,6 +18,7 @@
   - [原型与原型链](JavaScript/原型与原型链.md)
   - [事件循环](JavaScript/事件循环.md)
   - [常用数组方法](JavaScript/常用数组方法.md)
+  - [判断一个变量是数组的所有方法](JavaScript/判断是一个数组.md)
   - [apply,bind 和 call](JavaScript/apply,bind和call.md)
 - Browser
 
