@@ -10,7 +10,7 @@
 - 3.给函数传入参数
 
 ```JavaScript
-默认下 this 在 window，输出 undefined,传入 cat,此时输出喵喵
+// 默认下 this 在 window，输出 undefined,传入 cat,此时输出喵喵
 let dog = {
 function eat(food) {
 console.log(`我喜欢吃${food}`)
@@ -28,7 +28,7 @@ dog.eat.call(cat,'鱼')
 
 ## apply
 
-apply 相较于 call,只有传参不同,对于上边的示例他用数组来传参其他部分完全相同
+apply 相较于 call,只有传参不同,对于上边的示例他用**数组**来传参其他部分完全相同,对于(...args)参数列表传参使用`apply`更有优越性
 dog.eat.apply(cat,['鱼','肉'])
 
 ## bind

@@ -20,6 +20,7 @@
   - [常用数组方法](JavaScript/常用数组方法.md)
   - [判断一个变量是数组的所有方法](JavaScript/判断是一个数组.md)
   - [apply,bind 和 call](JavaScript/apply,bind和call.md)
+  - [new 操作符](JavaScript/new操作符.md)
 - Browser
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
