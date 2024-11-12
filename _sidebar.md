@@ -1,7 +1,7 @@
 - HTML
 
-  - [HTML 语义化](HTML/标签语义化.md)
   - [Canvas 基础](HTML/Canvas基础.md)
+  - [Script 标签的动态执行]
 
 - CSS
 
@@ -49,4 +49,4 @@
   - [初探 webpack 之编写 loader](Plugin/初探webpack之编写loader.md)
 
 - 前端工程化
-  - [Babel](前端工程化)
+  - [Babel](Engineering/Babel.md)
