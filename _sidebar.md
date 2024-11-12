@@ -1,7 +1,7 @@
 - HTML
 
   - [Canvas 基础](HTML/Canvas基础.md)
-  - [Script 标签的动态执行]
+  - [script 标签的动态执行](HTML/Script标签延时执行.md)
 
 - CSS
 
@@ -16,10 +16,10 @@
   - [原型与原型链](JavaScript/原型与原型链.md)
   - [事件循环](JavaScript/事件循环.md)
   - [常用数组方法](JavaScript/常用数组方法.md)
-  - [判断一个变量是数组的所有方法](JavaScript/判断是一个数组.md)
+  - [判断一个变量是数组](JavaScript/判断是一个数组.md)
   - [apply,bind 和 call](JavaScript/apply,bind和call.md)
   - [new 操作符](JavaScript/new操作符.md)
-  - [深浅拷贝](JavaScript/)
+  - [深浅拷贝](JavaScript/JS深浅拷贝.md)
   - [promise](JavaScript/Promise.md)
 - Browser
 
