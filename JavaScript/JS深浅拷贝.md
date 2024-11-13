@@ -48,35 +48,58 @@ console.log(b);
 
 虽然容易写，但问题在于当`a`里边有函数,那么`b`实际上是接收不到的
 
+#### 基础版本的手写深拷贝
+
+```JavaScript
+function deepClone(oldData) {
+  if(typeof oldData === 'object' && oldData !== null) {
+    let res = Array.isArray(oldData) ? [] : {};
+    for(let k in oldData) {
+      if(oldData.hasOwnProperty(k)) {
+        // 递归方案解决深层引用数据拷贝
+        res[k] = deepClone(oldData[k]);
+      }
+    }
+    return res;
+  }else {
+    return oldData;
+  }
+}
+```
+
+以上代码有一定缺席,第一他用`[]`或`{}`来承载拷贝内容，丢失了拷贝内容的原型链。第二，如果深拷贝的对象带有循环引用，类似`obj.self = obj`，那么将造成栈溢出的错误
+
+#### 支持原型继承和循环调用的版本
+
 ```JavaScript
 function deepClone(obj, map = new WeakMap()) {
-  // 基本类型直接返回
-  if (obj === null || typeof obj !== 'object') {
+  // 使用weakmap来记录每个访问的对象，避免循环调用。并且WeakMap 中的键是弱引用，如果没有其他引用指向键，会自动释放内存
+  if (typeof obj !== 'object' || obj === null) {
     return obj;
   }
 
-  // 处理循环引用
+  // 检查循环引用
   if (map.has(obj)) {
     return map.get(obj);
   }
 
-  // 创建新对象，保持原型链
-  const clone = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
-  map.set(obj, clone);
+  const res = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
+  // 继承对象的原型链
 
+  map.set(obj, res);
+  // obj为引用,如果指向同一个引用(循环调用)，代码会在上边直接return
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
-      // 递归拷贝属性
-      clone[key] = deepClone(obj[key], map);
+      res[key] = deepClone(obj[key], map);
     }
   }
 
-  // 拷贝Symbol属性
+  // 如果拷贝对象中存在Symbol属性的键
   const symbolKeys = Object.getOwnPropertySymbols(obj);
   for (const sym of symbolKeys) {
-    clone[sym] = deepClone(obj[sym], map);
+    res[sym] = deepClone(obj[sym], map);
   }
 
-  return clone;
+  return res;
 }
 ```
