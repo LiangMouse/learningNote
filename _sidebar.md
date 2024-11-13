@@ -1,15 +1,13 @@
 - HTML
 
-  - [Canvas 基础](HTML/Canvas基础.md)
   - [script 标签的动态执行](HTML/Script标签延时执行.md)
 
 - CSS
 
-  - [垂直居中布局](CSS/垂直居中布局.md)
+  - [多种居中布局实现](CSS/水平垂直居中布局.md)
   - [CSS 盒子模型](CSS/CSS盒子模型.md)
   - [Flex 布局](CSS/Flex布局.md)
-  - [响应式布局的实现](CSS/响应式布局的实现.md)
-  - [块级格式化上下文](CSS/块级格式化上下文.md)
+  - [块级格式化上下文](CSS/块级格式上下文.md)
 
 - JavaScript
   - [ES6 新特性](JavaScript/ES6新特性.md)
@@ -25,7 +23,7 @@
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
   - [HTTP 缓存](Browser/HTTP缓存.md)
-  - [GET 和 POST 的区别](Browser/GET和POST的区别.md)
+  - [GET 和 POST 方法的区别](Browser/GET和POST方法的区别.md)
   - [CDN 的作用和原理](Browser/CDN缓存的理解.md)
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
 
@@ -50,3 +48,4 @@
 
 - 前端工程化
   - [Babel](Engineering/Babel.md)
+  - [Jest 基础](Engineering/Jest.md)
