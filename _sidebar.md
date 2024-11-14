@@ -23,9 +23,10 @@
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
   - [HTTP 缓存](Browser/HTTP缓存.md)
-  - [GET 和 POST 方法的区别](Browser/GET和POST方法的区别.md)
+  - [GET 和 POST 的区别](Browser/GET和POST方法的区别.md)
   - [CDN 的作用和原理](Browser/CDN缓存的理解.md)
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
+  - [浏览器存储](Browser/浏览器存储.md)
 
 - TypeScript
   - [Ts 类型基础](TypeScript/基础类型.md)
