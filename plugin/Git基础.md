@@ -42,5 +42,7 @@ git checkout -b feature-new-feature && git push -u origin feature-new-feature
 
 拉取代码也可能会产生冲突，此时可能会先 `git stash -u`，然后拉取，然后 `git stash pop` 弹出自己原有代码来处理冲突(**注意**:不带-u 参数的 git stash 不会暂存新建的文件)
 
+进行 `git commit`之后想要撤销当前的提交，可以使用`git reset`命令
+
 <hr />
 据说可以通过git log查看提交日志，来推测公司的真实下班时间？
