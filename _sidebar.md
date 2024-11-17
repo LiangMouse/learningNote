@@ -19,6 +19,7 @@
   - [new 操作符](JavaScript/new操作符.md)
   - [深浅拷贝](JavaScript/JS深浅拷贝.md)
   - [promise](JavaScript/Promise.md)
+  - [Js 数据类型](JavaScript/Js数据类型.md)
 - Browser
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
