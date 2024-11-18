@@ -21,6 +21,7 @@
   - [promise](JavaScript/Promise.md)
   - [Js 数据类型](JavaScript/Js数据类型.md)
   - [null 和 undefined 的区别](JavaScript/null和undefined的区别.md)
+  - [0.1+0.2 不等于 0.3?](JavaScript/0.1+0.2不等于0.3？.md)
 - Browser
 
   - [跨域问题与解决方案](Browser/跨域问题.md)
@@ -46,7 +47,7 @@
 - Plugin
 
   - [Git 基础](Plugin/Git基础.md)
-  - [初探 webpack 之编写 loader](Plugin/初探webpack之编写loader.md)
+  - [Git 版本回退](Plugin/Git版本回退.md)
   - [Git pull 和 fetch 区别](Plugin/git%20pull和fetch的区别.md)
 
 - 前端工程化
