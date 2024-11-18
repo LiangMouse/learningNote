@@ -127,3 +127,7 @@ outerPromise
 - `promise.race` 一系列 promise 中返回第一个完成的 promise 实例值,返回它的 promise 结果
 - `promise.all` 执行全部的 promise，并返回 promise 值的数组
 - `promise.any` 等待第一个`fulfilled`的 promise,并返回他，如果均为 rejected,那么将返回一个错误信息的数组
+
+---
+
+axios 和 Async await 基于 Promise 实现
