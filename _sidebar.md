@@ -26,7 +26,7 @@
   - [跨域问题与解决方案](Browser/跨域问题.md)
   - [HTTP 缓存](Browser/HTTP缓存.md)
   - [GET 和 POST 的区别](Browser/GET和POST方法的区别.md)
-  - [CDN 的作用和原理](Browser/CDN缓存的理解.md)
+  - [CDN 的作用和原理](Browser/CDN的作用和原理.md)
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
   - [浏览器存储](Browser/浏览器存储.md)
 
@@ -41,17 +41,18 @@
 
 - React
 
-  - [React 中 JSX 的理解](React/React中JSX的理解.md)
-  - [React 组件的 state 和 props](React/React组件的state和props.md)
+  - [类组件和函数组件的不同](React/类组件和函数组件的不同.md)
 
 - Plugin
 
   - [Git 基础](Plugin/Git基础.md)
   - [初探 webpack 之编写 loader](Plugin/初探webpack之编写loader.md)
+  - [Git pull 和 fetch 区别](Plugin/git%20pull和fetch的区别.md)
 
 - 前端工程化
   - [Babel](Engineering/Babel.md)
   - [Jest 基础](Engineering/Jest.md)
+  - [Vite 为什么比 Webpack 快](Engineering/Vite为什么比Webpack快)
 - 计算机基础
   - [OSI 七层模型](计算机基础/OSI七层模型.md)
   - [进程和线程区别](计算机基础/进程和线程的区别.md)
