@@ -1,3 +1,5 @@
+# JS 要不要加分号
+
 ```javaScript
 function foo1() {
   return;
