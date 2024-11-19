@@ -18,14 +18,41 @@
   分为真值和假值，假值: false,0,'',nan,null,undefined
 
 - null
+
+  表示空值或无值
+
 - undefined
 
+  表示变量已声明但未赋值
   关于这两个关键字的释义和区别——[null 和 undefined 的区别](JavaScript/null和undefined的区别.md)
+
+- Symbol
+
+  es6 新增类型，表示唯一的标识符，通常用于对象的键
+  `let sym = Symbol("id");`
 
 ---
 
 #### 引用数据类型
 
+- Object
+
+  通用的对象类型，用于存储键值对，包含普通对象`{}`,数组`[]`,函数，日期，正则等
+
+- Array
+  [常用数组方法](JavaScript/常用数组方法)
+- Function
+  表示可调用的代码块，是一种特殊函数
+
 ### 常用类型转换
 
 - 字符串转数字: `+`
+
+```JavaScript
+var arr = [0];
+if(arr) { // arr转换成boolean的true
+  console.log(arr == true); // 对象和数字或字符串或布尔值比较，对象会先转换成原始值(先valueOf()再toString())arr的toString相当于arr的join，转换成了0.然后0与true比较，true转换成1,0不等于1返回false
+} else {
+  console.log(a);
+}
+```
