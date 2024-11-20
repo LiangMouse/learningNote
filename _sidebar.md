@@ -30,9 +30,11 @@
   - [CDN 的作用和原理](Browser/CDN的作用和原理.md)
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
   - [浏览器存储](Browser/浏览器存储.md)
+  - [登录鉴权](Browser/登录鉴权.md)
 
 - TypeScript
   - [Ts 类型基础](TypeScript/基础类型.md)
+  - [type 和 interface 的区别](TypeScript/type和interface.md)
 - Vue
 
   - [Vue 中 key 的作用](Vue/Vue中key的作用.md)

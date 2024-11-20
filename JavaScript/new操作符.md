@@ -12,7 +12,7 @@ new 操作符是一个对构造函数生成对象原型的语法糖
 
 - **执行构造函数,构造函数 this 指向新对象**：调用构造函数，将新创建的对象绑定到函数内部的 this，这样构造函数中的 this 指向新对象。
 
-- **返回对象**：构造函数执行完成后，如果没有显式返回对象，则 new 操作符返回新创建的对象(如果 new 的构造函数内部返回值是一个对象，那么 new 操作符会返回该对象而不是新创建的对象)
+- **返回对象**：构造函数执行完成后，如果没有显式返回对象，则 new 操作符返回新创建的对象(如果 构造函数内部返回值是一个对象，那么 new 操作符会返回该对象而不是新创建的对象)
 
 #### 让我们对应这四步给出代码
 
@@ -25,7 +25,6 @@ funtion myNew(fn, ...arg){
   // 执行构造函数,构造函数 this 指向新对象
   let ret = fn.apply(obj,arg);
   // 返回对象
-  flag = (ret&&typeof ret === 'function') || typeof ret === 'object';
-  return flag ? flag : obj;
+  return ret && (typeof ret === 'object' || typeof ret === 'function') ? ret : obj;
 }
 ```
