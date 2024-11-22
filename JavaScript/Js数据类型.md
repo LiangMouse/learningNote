@@ -24,7 +24,7 @@
 - undefined
 
   表示变量已声明但未赋值
-  关于这两个关键字的释义和区别——[null 和 undefined 的区别](JavaScript/null和undefined的区别.md)
+  关于这两个关键字的释义和区别——[null 和 undefined 的区别](JavaScript/null和undefined的区别及两者详解.md)
 
 - Symbol
 
@@ -44,8 +44,9 @@
 - Function
   表示可调用的代码块，是一种特殊函数
 - Set
-	用于数组去重
-	[Set常用方法](JavaScript/Set常用方法)
+  用于数组去重
+  [Set 常用方法](JavaScript/Set常用方法)
+
 ### 常用类型转换
 
 - 字符串转数字: `+`
@@ -58,5 +59,7 @@ if(arr) { // arr转换成boolean的true
   console.log(a);
 }
 ```
+
 ### 隐式数据类型转化
-1. 数字加bool会把bool转换成数字
+
+1. 数字加 bool 会把 bool 转换成数字
