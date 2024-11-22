@@ -58,3 +58,5 @@ if(arr) { // arr转换成boolean的true
   console.log(a);
 }
 ```
+### 隐式数据类型转化
+1. 数字加bool会把bool转换成数字

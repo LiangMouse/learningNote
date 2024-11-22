@@ -41,6 +41,7 @@
   - [Vue 数据双向绑定](Vue/Vue数据双向绑定.md)
   - [MVVM 模式的理解](Vue/MVVM模式的理解.md)
   - [v-if 与 v-show 的区别](Vue/v-if与v-show的区别.md)
+  - [Vue2 与 3 的区别](Vue/Vue2和Vue3的区别.md)
 
 - React
 

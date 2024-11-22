@@ -181,12 +181,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "每日偶记/24.11.md",
+                "file": "Vue/Vue2和Vue3的区别.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "24.11"
+              "title": "Vue2和Vue3的区别"
             }
           }
         ],
@@ -333,18 +333,19 @@
   },
   "active": "27fdf431d28a4228",
   "lastOpenFiles": [
-    "JavaScript/Set常用方法.md",
+    "Browser/UDP和TCP的区别.md",
+    "计算机基础/OSI七层模型.md",
+    "每日偶记/24.11.md",
     "JavaScript/Js数据类型.md",
+    "JavaScript/Set常用方法.md",
     "JavaScript/常用数组方法.md",
     "JavaScript/常用的Obj方法.md",
-    "每日偶记/24.11.md",
     "React/React.md",
     "React/img",
     "React/img/Pasted image 20241121204548.png",
     "image.png",
     "Browser/登录鉴权.md",
     "前端趣谈/+0和-0...JS那些反人类设定.md",
-    "Browser/UDP和TCP的区别.md",
     "Browser/WebSocket.md",
     "plugin/axios.md",
     "Browser/从输入域名到页面显示发生了什么.md",
@@ -352,7 +353,6 @@
     "Browser/HTTP2和1.1等版本的对比.md",
     "Browser/HTTP缓存.md",
     "计算机基础/HTTP协议.md",
-    "计算机基础/OSI七层模型.md",
     "TypeScript/泛型.md",
     "TypeScript/TS类型.md",
     "JavaScript/new操作符.md",
