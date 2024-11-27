@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vue/computed和watch的区别.md",
+                "file": "JavaScript/常用数组方法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "computed和watch的区别"
+              "title": "常用数组方法"
             }
           }
         ],
@@ -221,13 +221,23 @@
   },
   "active": "e4b99258f430c35f",
   "lastOpenFiles": [
-    "plugin/axios.md",
+    "React/类组件和函数组件的不同.md",
     "每日偶记/24.11.md",
+    "JavaScript/常用数组方法.md",
+    "JavaScript/间隔函数.md",
     "JavaScript/Js数据类型.md",
+    "JavaScript/判断是一个数组.md",
+    "JavaScript/常用的Obj方法.md",
+    "CSS/CSS动画.md",
+    "计算机基础/OSI七层模型.md",
+    "CSS/水平垂直居中布局.md",
+    "Browser/浏览器存储.md",
+    "Browser/跨域问题.md",
+    "每日偶记/打工人.md",
     "Vue/computed和watch的区别.md",
+    "plugin/axios.md",
     "Browser/CDN的作用和原理.md",
     "Browser/UDP和TCP的区别.md",
-    "Browser/跨域问题.md",
     "Browser/长连接和短连接.md",
     "Browser/从输入域名到页面显示发生了什么.md",
     "Browser/GET和POST方法的区别.md",
@@ -240,18 +250,8 @@
     "Engineering/Pasted image 20241123190225.png",
     "Engineering/WebPack和Vite对比下的优缺点.md",
     "Browser/登录鉴权.md",
-    "JavaScript/常用的Obj方法.md",
     "JavaScript/事件循环.md",
-    "JavaScript/async&await.md",
-    "async&await.md",
-    "JavaScript/async/await.md",
     "JavaScript/async",
-    "JavaScript/间隔函数.md",
-    "README.md",
-    "_sidebar.md",
-    "JavaScript/对象的常用方法.md",
-    "Vue/Vue中Key的作用.md",
-    "JavaScript/null和undefined的区别及两者详解.md",
     "React/img/Pasted image 20241121204548.png",
     "React/img",
     "image.png"

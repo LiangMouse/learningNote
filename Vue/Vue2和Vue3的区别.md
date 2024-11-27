@@ -9,7 +9,7 @@ Vue2是选项API，data,props,computed,watch,生命周期钩子散乱摆放
 Vue3组合式API将同一逻辑内容写在一起，增加代码可读性，内聚性
 #### Vue3异步组件
 Vue3提供Suspense组件，在模板中使用，允许程序在异步组件加载完成渲染兜底内容。
-```vue
+```Vue
 <tempalte> 
 	<suspense>
 		<template #default>

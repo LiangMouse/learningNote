@@ -1,14 +1,14 @@
 # OSI 七层模型
 
-| TCP/IP 层级           | OSI 参考模型层级 | 协议及技术                |
-| --------------------- | ---------------- | ------------------------- |
-| 应用层                | 应用层           | HTTP, FTP, SNMP, DNS      |
-|                       | 表示层           | JPEG, ASCII, DECOIC, 加密 |
-|                       | 会话层           | SSL, TLS                  |
-| 传输层                | 传输层           | TCP, UDP                  |
-| 网络层                | 网络层           | IP, ICMP, ARP, RIP 等     |
-| 网络接口层/数据链路层 | 数据链路层       | FDDI, Ethernet, PPP       |
-|                       | 物理层           | IEEE 802.1                |
+| TCP/IP 层级   | OSI 参考模型层级 | 协议及技术                   |
+| ----------- | ---------- | ----------------------- |
+| 应用层         | 应用层        | HTTP, FTP, SNMP, DNS    |
+|             | 表示层        | JPEG, ASCII, DECOIC, 加密 |
+|             | 会话层        | SSL, TLS                |
+| 传输层         | 传输层        | TCP, UDP                |
+| 网络层         | 网络层        | IP, ICMP, ARP, RIP 等    |
+| 网络接口层/数据链路层 | 数据链路层      | FDDI, Ethernet, PPP     |
+|             | 物理层        | IEEE 802.1              |
 
 ---
 
