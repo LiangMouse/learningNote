@@ -20,6 +20,7 @@
   - [深浅拷贝](JavaScript/JS深浅拷贝.md)
   - [promise](JavaScript/Promise.md)
   - [Js 数据类型](JavaScript/Js数据类型.md)
+  - [判断数据类型](JavaScript/判断数据类型.md)
   - [null 和 undefined 的区别](JavaScript/null和undefined的区别.md)
   - [0.1+0.2 不等于 0.3?](JavaScript/0.1+0.2不等于0.3？.md)
 - Browser

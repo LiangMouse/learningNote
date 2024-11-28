@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/常用数组方法.md",
+                "file": "JavaScript/常用的Obj方法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "常用数组方法"
+              "title": "常用的Obj方法"
             }
           }
         ],
@@ -221,9 +221,14 @@
   },
   "active": "e4b99258f430c35f",
   "lastOpenFiles": [
+    "Browser/浏览器的进程和线程.md",
+    "JavaScript/箭头函数和普通函数的区别.md",
+    "Vue/路由两种模式.md",
+    "JavaScript/判断数据类型.md",
+    "JavaScript/var,let,const的区别.md",
+    "JavaScript/常用数组方法.md",
     "React/类组件和函数组件的不同.md",
     "每日偶记/24.11.md",
-    "JavaScript/常用数组方法.md",
     "JavaScript/间隔函数.md",
     "JavaScript/Js数据类型.md",
     "JavaScript/判断是一个数组.md",
@@ -242,15 +247,10 @@
     "Browser/从输入域名到页面显示发生了什么.md",
     "Browser/GET和POST方法的区别.md",
     "plugin/Git rebase和merge的区别.md",
-    "plugin/Git版本回退.md",
-    "Engineering/Vite青训营笔记.md",
     "Pasted image 20241122143507.png",
     "Pasted image 20241122143506.png",
     "Pasted image 20241122143520.png",
     "Engineering/Pasted image 20241123190225.png",
-    "Engineering/WebPack和Vite对比下的优缺点.md",
-    "Browser/登录鉴权.md",
-    "JavaScript/事件循环.md",
     "JavaScript/async",
     "React/img/Pasted image 20241121204548.png",
     "React/img",
