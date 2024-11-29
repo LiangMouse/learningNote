@@ -32,6 +32,7 @@
   - [从输入域名到页面显示发生了什么](Browser/从输入域名到页面显示发生了什么.md)
   - [浏览器存储](Browser/浏览器存储.md)
   - [登录鉴权](Browser/登录鉴权.md)
+  - [浏览器的进程和线程](Browser/)
 
 - TypeScript
   - [Ts 类型基础](TypeScript/基础类型.md)
@@ -62,4 +63,3 @@
   - [Vite 为什么比 Webpack 快](Engineering/Vite为什么比Webpack快)
 - 计算机基础
   - [OSI 七层模型](计算机基础/OSI七层模型.md)
-  - [进程和线程区别](计算机基础/进程和线程的区别.md)
