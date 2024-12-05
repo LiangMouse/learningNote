@@ -1,6 +1,6 @@
 - HTML
 
-  - [script 标签的动态执行](HTML/Script标签延时执行.md)
+  - [script 标签的异步执行](HTML/Script标签延时执行.md)
 
 - CSS
 
@@ -14,11 +14,13 @@
   - [原型与原型链](JavaScript/原型与原型链.md)
   - [事件循环](JavaScript/事件循环.md)
   - [常用数组方法](JavaScript/常用数组方法.md)
-  - [判断一个变量是数组](JavaScript/判断是一个数组.md)
+  - [闭包](JavaScript/闭包.md)
+  - [箭头函数与普通函数区别](JavaScript/箭头函数和普通函数的区别.md)
   - [apply,bind 和 call](JavaScript/apply,bind和call.md)
   - [new 操作符](JavaScript/new操作符.md)
   - [深浅拷贝](JavaScript/JS深浅拷贝.md)
   - [promise](JavaScript/Promise.md)
+  - [async/await](JavaScript/async函数的原理.md)
   - [Js 数据类型](JavaScript/Js数据类型.md)
   - [判断数据类型](JavaScript/判断数据类型.md)
   - [null 和 undefined 的区别](JavaScript/null和undefined的区别.md)

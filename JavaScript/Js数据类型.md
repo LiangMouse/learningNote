@@ -15,7 +15,7 @@
 
 - Boolean
 
-  分为真值和假值，假值: false,0,'',nan,null,undefined
+  分为真值`true`和假值`false`，假值: false,0,'',nan,null,undefined
 
 - null
 

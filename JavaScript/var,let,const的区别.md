@@ -46,4 +46,17 @@ let x;
 
 `let`不允许重复声明同一变量，而`var`可以重复声明同一变量，并用后边的值替代前边的值
 
-4. `const`声明的值不能变，也意味着只声明不赋值对于`const`命令是非法的
+4. `const`声明的值不能变，也意味着只声明不赋值对于`const`命令是非法的，一般用于引用类型，存储数据的引用。如果想实现引用类型内容的不可变，可以使用`object.freeze()`
+
+```javascript
+const obj = Object.freeze({
+  name: "Alice",
+  age: 25,
+});
+
+// 尝试修改属性
+obj.name = "Bob"; // 无效操作，不会修改
+console.log(obj.name); // 'Alice'
+```
+
+但是只能对第一层生效
