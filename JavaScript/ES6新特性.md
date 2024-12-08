@@ -153,6 +153,8 @@ me.study(); //study
 
 ## Promise 对象
 
+[Promise 详细内容](JavaScript/Promise.md)
+
 `Promise`是异步编程的一种解决方案。  
 从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。  
 `Promise`异步操作有三种状态：`pending`、`fulfilled`和`rejected`。除了异步操作的结果，任何其他操作都无法改变这个状态。  

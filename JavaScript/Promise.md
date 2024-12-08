@@ -124,10 +124,13 @@ outerPromise
 
 ### 其他的静态方法
 
-- `promise.race` 一系列 promise 中返回第一个完成的 promise 实例值,返回它的 promise 结果
 - `promise.all` 执行全部的 promise，并返回 promise 值的数组
-- `promise.any` 等待第一个`fulfilled`的 promise,并返回他，如果均为 rejected,那么将返回一个错误信息的数组
+- `promise.race` 一系列 promise 中返回第一个完成的 promise 实例值,返回它的 promise 结果
+- `promise.any` 等待第一个`fulfilled`的 promise,并返回他，如果均为 rejected,那么将返回一个错误信息的数组(race 是第一个敲定的)
+- `promise.allSettled` 等待全部的 `promise` 状态敲定，返回一个数组，每个元素都是一个对象，包含`status`和`value`属性，分别表示 promise 的状态和值
 
 ---
 
-axios 和 Async await 基于 Promise 实现
+##### 链式调用的执行顺序
+
+axios 和 Async await 都是基于 Promise 实现

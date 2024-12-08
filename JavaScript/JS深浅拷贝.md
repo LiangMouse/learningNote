@@ -51,23 +51,20 @@ console.log(b);
 #### 基础版本的手写深拷贝
 
 ```JavaScript
-function deepClone(oldData) {
-  if(typeof oldData === 'object' && oldData !== null) {
-    let res = Array.isArray(oldData) ? [] : {};
-    for(let k in oldData) {
-      if(oldData.hasOwnProperty(k)) {
-        // 递归方案解决深层引用数据拷贝
-        res[k] = deepClone(oldData[k]);
-      }
+function deepCLone(oldData) {
+  if (typeof oldData !== "object" || oldData === null) return oldData;
+  let res = Array.isArray(oldData) ? [] : {};
+  for (const k in oldData) {
+    if (oldData.hasOwnProperty(k)) {
+      res[k] = deepClone(oldData[k]);
     }
-    return res;
-  }else {
-    return oldData;
   }
+  return res;
 }
+
 ```
 
-以上代码有一定缺席,第一他用`[]`或`{}`来承载拷贝内容，丢失了拷贝内容的原型链。第二，如果深拷贝的对象带有循环引用，类似`obj.self = obj`，那么将造成栈溢出的错误
+以上代码较容易理解但是存在一定缺陷。第一他用`[]`或`{}`来承载拷贝内容，丢失了拷贝内容的原型链。第二，如果深拷贝的对象带有循环引用，类似`obj.self = obj`，那么将造成栈溢出的错误
 
 #### 支持原型继承和循环调用的版本
 
