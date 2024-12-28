@@ -1,92 +1,23 @@
-# 常用 hooks
+#### **useState**
+状态是变化的数据，是组件甚至前端应用的核心。useState 有传入值和函数两种参数，返回的 setState 也有传入值和传入函数两种参数。
 
-#### useState
+#### **useEffect**
+副作用 effect 函数是在渲染之外额外执行的一些逻辑。它是根据第二个参数的依赖数组是否变化来决定是否执行 effect，可以返回一个清理函数，会在下次 effect 执行前执行。
 
-对应类组件的 `onUpdateState`。语义是创建组件的状态数据。参数可以是一个初始值，也可以是一个函数，函数会在组件首次挂载时进行计算并返回值。
+#### **useLayoutEffect**
+和 useEffect 差不多，但是 useEffect 的 effect 函数是异步执行的，所以可能中间有次渲染，会闪屏，而 useLayoutEffect 则是同步执行的，所以不会闪屏，但如果计算量大可能会导致掉帧。
 
-useState 返回一个数组，包含 state 和 setXxx 的 api，一般我们都是用解构语法取。
+#### **useReducer**
+封装一些修改状态的逻辑到 reducer，通过 action 触发，相较于`useEffect`更适合在逻辑复杂的情况下使用。当修改深层对象的时候，创建新对象比较麻烦，可以结合 `immer`
 
-#### useEffect
+#### **useRef**
+可以保存 dom 引用或者其他内容，通过 `xxRef.current` 来取，改变它的内容不会触发重新渲染
 
-副作用，例如外部网络请求，本地 localStorage 做改变。对外部数据做改变
-只在挂载或是特定状态改变的时候执行一次
+#### **forwardRef + useImperativeHandle**
+通过 forwardRef 可以从子组件转发 ref 到父组件，如果想自定义 ref 内容可以使用 useImperativeHandle
 
-```javascript
-useEffect(() => {
-  queryData().then((data) => {
-    setNum(data);
-  });
-}, []);
-```
+#### **useContext**
+跨层组件之间传递数据可以用 Context。用 createContext 创建 context 对象，用 Provider 修改其中的值， function 组件使用 useContext 的 hook 来取值，class 组件使用 Consumer 来取值
 
-第二个参数这个数组叫做依赖数组，react 是根据它有没有变来决定是否执行 effect 函数，如果不传组件的每次重新渲染都会执行函数
-
-#### useLayoutEffect
-
-一般将`useLayoutEffect`称为有`DOM`操作的副作用`hooks`。作用是在`DOM`更新完成之后执行某个操作。执行时机：在`DOM`更新之后执行
-
-与`useEffect`对比
-
-useEffect 是在组件渲染完成后异步执行的，它不会阻塞组件的渲染过程，适用于大多数情况。而 useLayoutEffect 是在组件渲染完成后同步执行的，它会阻塞组件的渲染，适用于需要准确获取布局信息或进行 DOM 操作的场景。
-
-#### useReducer
-
-在修改组件状态之前执行一些固定的逻辑，封装`reducer`函数，
-
-```javascript
-import { useEffect, useRef } from "react";
-
-function App() {
-  const inputRef = useRef < HTMLInputElement > null;
-
-  useEffect(() => {
-    inputRef.current?.focus();
-  });
-
-  return (
-    <div>
-      <input ref={inputRef}></input>
-    </div>
-  );
-}
-
-export default App;
-```
-
-用于保存`React`组件的`DOM`引用
-
-#### useContext
-
-跨任意层传递组件
-
-```javascript
-import { createContext, useContext } from "react";
-
-const countContext = createContext(111);
-
-function Aaa() {
-  return (
-    <div>
-      <countContext.Provider value={222}>
-        // 修改 context 的值
-        <Bbb></Bbb>
-      </countContext.Provider>
-    </div>
-  );
-}
-
-function Bbb() {
-  return (
-    <div>
-      <Ccc></Ccc>
-    </div>
-  );
-}
-
-function Ccc() {
-  const count = useContext(countContext);
-  return <h2>context 的值为：{count}</h2>;
-}
-
-export default Aaa;
-```
+#### **memo + useMemo + useCallback**
+memo 包裹的组件只有在 props 变的时候才会重新渲染，useMemo、useCallback 可以防止 props 不必要的变化，两者一般是结合用。不过当用来缓存计算结果等场景的时候，也可以单独用 useMemo、useCallback
