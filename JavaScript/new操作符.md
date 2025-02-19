@@ -17,7 +17,7 @@ new 操作符是一个对构造函数生成对象原型的语法糖
 #### 让我们对应这四步给出代码
 
 ```JavaScript
-funtion myNew(fn, ...arg){
+function myNew(fn, ...arg){
   // 创建一个空对象
   const obj = {};
   // 空对象的隐式原型指向构造函数的显式原型
