@@ -28,3 +28,4 @@ function myNew(fn, ...arg){
   return ret && (typeof ret === 'object' || typeof ret === 'function') ? ret : obj;
 }
 ```
+
