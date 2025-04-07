@@ -13,3 +13,4 @@ Babel 是一个 JavaScript 编译器，主要用于将最新版本的 JavaScript
 - **解析**：将 JavaScript 代码解析为抽象语法树（AST）。
 - **转换**：根据配置的插件和预设，对 AST 进行修改。
 - **生成**：将修改后的 AST 重新生成 JavaScript 代码。
+### Babel是如何把ES6+转成ES5的
