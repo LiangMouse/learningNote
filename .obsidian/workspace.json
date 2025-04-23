@@ -90,9 +90,51 @@
               "icon": "lucide-file",
               "title": "CSS动画"
             }
+          },
+          {
+            "id": "8c07d192d4b4ea43",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "每日偶记/intern.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "intern"
+            }
+          },
+          {
+            "id": "a5a7a696830d4f95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Engineering/Babel.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Babel"
+            }
+          },
+          {
+            "id": "466a6a202e30e786",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "重学前端.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "重学前端"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -234,14 +276,25 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f82c45dea2fec164",
+  "active": "466a6a202e30e786",
   "lastOpenFiles": [
+    "Engineering/Babel.md",
+    "重学前端.md",
+    "每日偶记/未命名.md",
+    "每日偶记/intern.md",
+    "icon.png",
+    "每日偶记/25_03.md",
+    "每日偶记/24.12.md",
+    "每日偶记/24.11.md",
+    "实习亮点.md",
+    "CSS/CSS动画.md",
+    "计算机基础/HTTP2和1.1等版本的对比.md",
+    "CSS/设置元素隐藏.md",
     "JavaScript/==和===的差别.md",
     "手撕代码/promise_all.md",
     "手撕代码/防抖节流.md",
     "JavaScript/常用数组方法.md",
     "JavaScript/var,let,const的区别.md",
-    "Engineering/Babel.md",
     "一些项目/LLM大模型.md",
     "一些项目/temp.md",
     "场景沉淀/大数据渲染.md",
@@ -254,19 +307,9 @@
     "Engineering/WebPack和Vite对比下的优缺点.md",
     "JavaScript/new操作符.md",
     "每日偶记/image.png",
-    "每日偶记/intern.md",
-    "每日偶记/25_03.md",
-    "每日偶记/24.12.md",
     "每日偶记/打工人.md",
     "场景沉淀/虚拟列表.md",
     "场景沉淀",
-    "前端趣谈/前端新技术.md",
-    "CSS/CSS选择器及权重.md",
-    "CSS/CSS选择器.md",
-    "前端趣谈/Js要不要加分号.md",
-    "JavaScript/模块化.md",
-    "前端趣谈/切图仔->AI大佬？.md",
-    "前端趣谈/+0和-0...JS那些反人类设定.md",
     "Pasted image 20241122143507.png",
     "Pasted image 20241122143506.png",
     "Pasted image 20241122143520.png",

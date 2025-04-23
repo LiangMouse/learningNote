@@ -40,4 +40,4 @@ CSS3 新推出的排版上下文，
   - `flex-grow` : 剩余空间的拉伸能力，子元素宽度总和小于容器宽度时起作用.例如三个子元素 flex 上下文宽度都是 100px,a 的 f-g 是 2，b 的 f-g 是 1，c 是 0.a 的实际宽度就是 100+(100%-300)\*2/3
   - `flex-shrink`:容器不足的收缩能力
   - `flex-basis`: 没有伸展收缩的基础长度
-    这三个值可以用`flex`属性表示,如 flex:1 含义为 f-grow:1;f-shrink:1;f-basis:auto;
+    这三个值可以用`flex`属性表示,如 flex:1 含义为 `f-grow:1;f-shrink:1;f-basis:auto`;

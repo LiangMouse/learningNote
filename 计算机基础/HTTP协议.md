@@ -19,7 +19,7 @@
 | Last-Modified                      | 请求资源的最后修改时间                                                                                   |
 | Expires                            | 应该在什么时候认为文档已经过期，从而不再缓存它                                                                       |
 | Max-age                            | 客户端的本地资源应该缓存多少秒，开启了 Cache-Control 后有效                                                         |
-| ETag                               | 资源的特定版本的标识符，Etags 类似于指纹                                                                       |
+| ETag                               | 资源的特定版本的标识符，Etags 类似指纹用于协商缓存                                                                       |
 | Set-Cookie                         | 设置和页面关联的 cookie，服务器通过这个头部把 cookie 传给客户端                                                       |
 | Server                             | 服务器的一些相关信息                                                                                    |
 | Access-Control-Allow-Origin        | 服务器端允许的请求 Origin 头部（譬如为 * ）                                                                   |
