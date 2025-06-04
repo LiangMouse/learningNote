@@ -10,4 +10,71 @@
 
 ### 设计原理
 
-- React Fiber 的核心思想是将组件树的遍历变成了可中断的异步任务。具体来说，React Fiber 会将整个组件树拆分成多个小的任务单元（Fiber），并按照优先级顺序依次执行这些任务单元。每当执行完一个任务单元时，React Fiber 就会检查当前是否有更高优先级的任务需要执行。如果有，则立即暂停当前任务，并开始执行更高优先级的任务，直到完成后再回来继续执行原来的任务。这样一来，React Fiber 可以让应用更加灵活地响应用户交互和其他事件。
+- React Fiber 的核心思想是将组件树的遍历变成了可中断的异步任务。具体来说，`React Fiber` 会将整个组件树拆分成多个小的任务单元（Fiber），并按照优先级顺序依次执行这些任务单元。每当执行完一个任务单元时，`React Fiber` 就会检查当前是否有更高优先级的任务需要执行。如果有，则立即暂停当前任务，并开始执行更高优先级的任务，直到完成后再回来继续执行原来的任务。这样一来，`React Fiber` 可以让应用更加灵活地响应用户交互和其他事件。
+
+### Fiber结构代码
+
+```javascript
+function FiberNode(
+  tag: WorkTag,
+  pendingProps: mixed,
+  key: null | string,
+  mode: TypeOfMode,
+) {
+  // 作为静态数据结构的属性
+  this.tag = tag; // 组件类型Function/Class/Host
+  this.key = key; // node唯一标识
+  this.elementType = null; // 大多数情况下和type一致(函数组件包Memo后有不同等)
+  this.type = null; // 根据不同的tag, 可能是函数名/类名/DOM节点名
+  this.stateNode = null; // 对应的真实node节点
+
+  // 用于连接其他Fiber节点形成Fiber树
+  this.return = null;
+  this.child = null;
+  this.sibling = null; // 指向右边第一个兄弟Fiber节点
+  this.index = 0;
+
+  this.ref = null;
+
+  // 保存本次更新造成的状态改变信息
+  this.pendingProps = pendingProps;
+  this.memoizedProps = null;
+  this.updateQueue = null;
+  this.memoizedState = null;
+  this.dependencies = null;
+
+  this.mode = mode;
+  // 保存当前操作造成的DOM更新
+  this.effectTag = NoEffect;
+  this.nextEffect = null;
+
+  this.firstEffect = null;
+  this.lastEffect = null;
+
+  // 调度优先级相关
+  this.lanes = NoLanes;
+  this.childLanes = NoLanes;
+
+  // 指向该fiber在另一次更新时对应的fiber
+  this.alternate = null;
+}
+```
+
+```javascript
+function App() {
+  return (
+    <div>
+      i am
+      <span>KaSong</span>
+    </div>
+  )
+}
+```
+上述的React应用可以这样表示
+-[](./img/FiberTreeExample.png)
+
+### DOM关系
+
+React使用“双缓存”来完成Fiber树的构建与替换——对应着DOM树的创建与更新。
+
+bb
