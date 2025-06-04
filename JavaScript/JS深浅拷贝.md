@@ -1,6 +1,6 @@
 # JS 深浅拷贝
 
-基本数据类型存的是值，而引用类型存的是地址，直接进行两变量的引用拷贝`let obj1 = obj2`会导致他们实际指向同一个内容，因此对于引用数据类型有了深浅拷贝的说法
+基本数据类型存的是值，而引用类型存的是地址，直接进行两引用变量的赋值操作 `let obj1 = obj2`会导致他们实际指向同一个内容
 
 浅拷贝和深拷贝的差别就在"深浅"上。浅拷贝实现对单层引用类型的属性拷贝，而深拷贝会递归解引用实现多层引用类型的属性拷贝(复制引用类型指向堆中的属性内容并开拓一个新内存空间)
 
@@ -18,7 +18,7 @@ console.log(obj1.details.city); // 输出 "Hang Zhou"，因为 details 对象是
 console.log(obj1.name); // 输出"ls"
 ```
 
-二`Object.assign()`
+二 `Object.assign()`
 
 ```JavaScript
 let obj1 = { name: "ls", details: { age: 25, city: "XC" } };
@@ -31,24 +31,22 @@ console.log(obj1.name); // 输出 "ls"，因为 name 是基本类型，进行了
 console.log(obj1.details.city); // 输出 "CX"，因为 details 是引用类型，复制了引用
 ```
 
-# 实现深拷贝的方法
+## 实现深拷贝的方法
 
-`JSON.parse(JSON.stringfy(obj))`
+### JSON化
+`const obj2 = JSON.parse(JSON.stringfy(obj1))`
 
-```JavaScript
-let a = [1, 2, 3, [3, 4, { name: 'jack' }]];
-let b = JSON.parse(JSON.stringify(a));
-// 序列化为JSON，反序列化为对象
-a[3][1] = 5;
-a[3][2].name = 'amy';
+虽然容易写，但存在着许多问题
 
-console.log(a);
-console.log(b);
-```
+1. 对于对象中的`函数`属性、`正则`对象、`Map`数据类型、`Set`数据类型、`Data`无法使用,stringfy后为`undefined`
+2. 面对`obj.self = obj` 这样的循环引用时直接报错
 
-虽然容易写，但问题在于当`a`里边有函数,那么`b`实际上是接收不到的
+### structuredClone
 
-#### 基础版本的手写深拷贝
+浏览器`Window`(内置的原生深拷贝API),推荐使用
+
+
+### 基础版本的手写深拷贝
 
 ```JavaScript
 function deepCLone(oldData) {

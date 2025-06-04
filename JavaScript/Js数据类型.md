@@ -49,7 +49,7 @@
 - Array
   [常用数组方法](JavaScript/常用数组方法)
 - Function
-  表示可调用的代码块，是一种特殊函数
+  表示可调用的代码块 JS引擎内置一个[[call]]方法, 支持()来调用这个内置的`call`,但倘若不是一个function属性,()运算则会报错
 - Set
   用于数组去重
   [Set 常用方法](JavaScript/Set常用方法)
