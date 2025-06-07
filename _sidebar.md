@@ -72,6 +72,7 @@
   - [Jest 基础](Engineering/Jest.md)
   - [Webpack 基础](Engineering/Webpack基础配置.md)
   - [Vite 为什么比 Webpack 快](Engineering/Vite为什么比Webpack快)
+  - [深入webpack插件](Engineering/深入webpack插件.md)
 - 计算机基础
 
   - [OSI 七层模型](计算机基础/OSI七层模型.md)
