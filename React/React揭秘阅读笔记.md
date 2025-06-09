@@ -42,7 +42,7 @@ React的理念是快速响应, 16 相比于15重构了整个架构, 那了解架
 			- 作为架构来说，之前React15的Reconciler采用递归的方式执行，数据保存在递归调用栈中，所以被称为stack Reconciler。React16的Reconciler基于Fiber节点实现，被称为Fiber Reconciler。
 			- 作为静态的数据结构来说，每个Fiber节点对应一个React element，保存了该组件的类型（函数组件/类组件/原生组件...）、对应的DOM节点等信息。
 			- 作为动态的工作单元来说，每个Fiber节点保存了本次更新中该组件改变的状态、要执行的工作（需要被删除/被插入页面中/被更新...）。
-		- 详见-[](./Fiber架构.md)
+		- 详见-[](./Fiber架构.md.)
 
 
 

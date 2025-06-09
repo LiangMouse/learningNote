@@ -77,4 +77,9 @@ function App() {
 
 React使用“双缓存”来完成Fiber树的构建与替换——对应着DOM树的创建与更新。
 
-bb
+双缓存也就是说在React中最多同时存在两颗`Fiber`树, 当前屏幕显示的和正在内存构建的。 React应用的根节点通过`current`指针在不同`Fiber`树的`rootFiber`间切换来完成两种树的切换。 每次状态更新都会产生新的workInProgress Fiber树，通过current与workInProgress的替换，完成DOM更新。
+
+为什么需要双缓存?
+1. **异步更新**：React Fiber的设计目的是支持异步渲染，允许在工作之间中断和恢复。这种双缓存机制有助于在不阻塞主线程的情况下进行异步更新，避免因长时间的渲染不间断影响用户交互。
+2. **工作与提交阶段分离**：`React Fiber`分为“工作阶段”和“提交阶段”。在工作阶段，React可以在“当前树”（current tree）基础上异步构建“工作树”（work-in-progress tree）。一旦工作树构建完毕，它会在提交阶段作为新的“current tree”，这样可以确保整个渲染过程的一致性和稳定性。
+3. 
