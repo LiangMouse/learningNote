@@ -55,9 +55,13 @@
   [Set 常用方法](JavaScript/Set常用方法)
 - Map
   与 Object 的区别
-  - 元素顺序由插入顺序决定，而不是键的 ASCII 码顺序
+  - map元素顺序由插入顺序决定，而不是键的 ASCII 码顺序
+  - map在数据量大时相较于object，在性能上有所优化
   - 不同于 Obj, Map 的键可以是任意类型，值可以是任意类型
   - 键必须唯一，值可以重复
+  - map无原型链
+  [Map常用APi](JavaScript/)
+
 - WeakMap
   - 键必须是对象：WeakMap 的键只能是对象（或函数），不能是原始类型（如字符串、数字等）。
   - 弱引用：WeakMap 的键是 弱引用，如果没有其他引用指向这个键，对应的键值对会被自动垃圾回收。
@@ -78,4 +82,4 @@ if(arr) { // arr转换成boolean的true
 
 ### 隐式数据类型转化
 
-1. 数字加 bool 会把 bool 转换成数字
+1. 加法操作符，数字加 bool 会把 bool 转换成数字

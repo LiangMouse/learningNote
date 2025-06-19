@@ -82,4 +82,18 @@ React使用“双缓存”来完成Fiber树的构建与替换——对应着DOM�
 为什么需要双缓存?
 1. **异步更新**：React Fiber的设计目的是支持异步渲染，允许在工作之间中断和恢复。这种双缓存机制有助于在不阻塞主线程的情况下进行异步更新，避免因长时间的渲染不间断影响用户交互。
 2. **工作与提交阶段分离**：`React Fiber`分为“工作阶段”和“提交阶段”。在工作阶段，React可以在“当前树”（current tree）基础上异步构建“工作树”（work-in-progress tree）。一旦工作树构建完毕，它会在提交阶段作为新的“current tree”，这样可以确保整个渲染过程的一致性和稳定性。
-3. 
+
+Fiber生成过程
+首次执行ReactDOM.render会创建`fiberRoot` 和`rootFiber`。其中`fiberRoot`是整个应用的根节点，`rootFiber`是<App/> 所在组件树的根节点。`fiberRoot`的`current`会指向当前页面上已渲染内容对应Fiber树，即current Fiber树。
+
+`fiberRootNode.current = rootFiber;`
+
+接下来进入render阶段，根据组件返回的JSX在内存中依次创建Fiber节点并连接在一起构建Fiber树，被称为workInProgress Fiber树。（下图中右侧为内存中构建的树，左侧为页面显示的树）。这个过程中会尝试复用current Fiber树中已有的Fiber节点内的属性，在首屏渲染时只有rootFiber存在对应的current fiber（即rootFiber.alternate）。
+
+在`alternate fiber`构建完成时，commit阶段渲染到页面，当前fiberRootNode的current指针指向workInProgress Fiber树使其变为current Fiber 树。当触发setState钩子时， 会进入update状态重新生成一个fiber树，和mount时一样，workInProgress fiber的创建可以复用current Fiber树对应的节点数据。
+
+这里决定是否复用的过程也就是`diff`算法
+
+`Reconciler`工作的阶段被称为render阶段。因为在该阶段会调用组件的`render`方法。
+`Renderer`工作的阶段被称为commit阶段。就像你完成一个需求的编码后执行`git commit`提交代码。commit阶段会把render阶段提交的信息渲染在页面上。
+render与commit阶段统称为`work`，即React在工作中。相对应的，如果任务正在Scheduler内调度，就不属于work。
