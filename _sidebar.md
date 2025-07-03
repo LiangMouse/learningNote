@@ -1,6 +1,6 @@
 - HTML
 
-  - [script 标签的异步执行](HTML/Script标签延时执行.md)
+  - [HTML的性能优化部分](HTML/HTML性能优化点.md)
 
 - CSS
 

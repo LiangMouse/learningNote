@@ -1,4 +1,10 @@
-# script 标签延时执行
+# HTML性能优化相关
+
+
+## img设置Loading=“lazy”
+
+
+## script 标签延时执行
 
 默认情况下当 HTML 解析到 script 标签会阻碍 HTML 的解析并转而下载 JS 脚本，下载后执行，执行后才去解析 HTML
 
