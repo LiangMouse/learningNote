@@ -44,5 +44,3 @@ git checkout -b feature-new-feature && git push -u origin feature-new-feature
 
 进行 `git commit`之后想要撤销当前的提交，可以使用`git reset`命令
 
-<hr />
-据说可以通过git log查看提交日志，来推测公司的真实下班时间？

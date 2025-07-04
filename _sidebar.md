@@ -59,13 +59,6 @@
   - [常用 hooks](React/常用hooks.md)
   - [Fiber 算法](React/Fiber架构.md)
 
-- Plugin
-
-  - [Git 基础](Plugin/Git基础.md)
-  - [Git 版本回退](Plugin/Git版本回退.md)
-  - [Git pull 和 fetch 区别](Plugin/git%20pull和fetch的区别.md)
-  - [Git rebase 和 merge 的区别](Plugin/Git%20rebase和merge的区别.md)
-
 - 前端工程化
   - [为什么要使用构建工具](Engineering/为什么要用构建工具.md)
   - [Babel](Engineering/Babel.md)
