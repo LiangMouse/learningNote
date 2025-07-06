@@ -1,18 +1,23 @@
 # git 基础
 
-## 最基础用法
+## 最基础SOP
 
 ```shell
 git clone 'url'
 ```
 
-**git clone**复制远端项目文件及同步 git 地址
+**git clone**复制远端项目文件及同步 git 分支以及log日志
+
+```shell
+git checkout -b {new-branch-name}
+```
+在本地新建当前需求的分支 [分支命名最佳实践链接](https://graphite.dev/guides/git-branch-naming-conventions)
 
 ```shell
 git add .
 ```
 
-将本地文件改动添加至 git 暂存区，被 git 跟踪，临时存储，不会保留历史
+将本地需求涉及改动添加至 git 暂存区，被 git 跟踪，临时存储，不会保留历史
 
 ```shell
 git commit -m ''
@@ -22,25 +27,14 @@ git commit -m ''
 将暂存区的改动内容提交到本地仓库，生成版本号和当前快照，支持回溯
 
 ```shell
-git push origin ls
+git push origin {branch-name}
 # origin指最初git clone的地址,ls是远程仓库的一个分支
 ```
+将所有本地的新commit提交到远端
 
-## 多人协作
+## 常用命令
 
-在公司项目中，通常每个人在远程仓库中有自己负责的分支。
+### git branch
 
-```shell
-git branch -r
-#查看远端所有分支
-git checkout -b feature-new-feature && git push -u origin feature-new-feature
-#新建自己的分支，开始coding~
-```
 
-当完成开发并推送后，需要提交 Pull Request 合并到主分支。
-为了避免冲突，如果你的开发文件也被其他人修改过，可能会产生合并冲突。为此，建议在主分支有改动时，定期执行` git pull --rebase origin main`(这里--rebase 参数可以使 git 日志清晰)，拉取主分支的最新更改并合并到自己的分支中，确保自己的分支保持最新，从而减少最终合并到主分支时发生冲突的风险。
-
-拉取代码也可能会产生冲突，此时可能会先 `git stash -u`，然后拉取，然后 `git stash pop` 弹出自己原有代码来处理冲突(**注意**:不带-u 参数的 git stash 不会暂存新建的文件)
-
-进行 `git commit`之后想要撤销当前的提交，可以使用`git reset`命令
 
