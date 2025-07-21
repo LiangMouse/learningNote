@@ -6,8 +6,10 @@
 
 - Number
   常见问题:
-  [0.1+0.2 的值?](JavaScript/0.1+0.2不等于0.3？)
-  包含 NaN.Infinity.-Infinity 这样的特殊值
+  - [0.1+0.2 的值?](JavaScript/0.1+0.2不等于0.3？)
+  - 包含 NaN.Infinity.-Infinity 这样的特殊值
+    - 其中NaN与NaN比较为false，需要用`Number.isNaN`判断。而Infinity在IEEE754中指数全为1，尾数全为0，可以用常规等号判断
+
 
 - String
 
