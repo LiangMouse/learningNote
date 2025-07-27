@@ -27,3 +27,5 @@ yarn create next-app
 `App Router`定义了两种组件
 - 服务器组件 (Server Components) : 这是默认的组件类型。它们在服务器上运行，完成数据获取和渲染后，将生成的 HTML 发送给浏览器。
 - 客户端组件 (Client Components) : 这类组件需要在文件顶部明确声明 "use client" 。它们会在服务器上进行一次预渲染（生成初始HTML），然后相关的 JavaScript 代码会发送到浏览器，在浏览器中“激活”（hydrate），变得可交互。
+
+为了表现对SSR的支持, Nextjs项目默认不引入index.html, 而是使用app/layout.tsx 对文件元数据等内容作修改，将服务端渲染贯彻始终
