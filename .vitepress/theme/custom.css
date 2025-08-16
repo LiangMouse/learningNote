@@ -1,0 +1,51 @@
+/* 自定义样式 */
+:root {
+  --vp-c-brand-1: #3c8772;
+  --vp-c-brand-2: #22C55E;
+  --vp-c-brand-3: #16A34A;
+}
+
+/* 优化代码块样式 */
+.vp-code-group {
+  margin: 16px 0;
+}
+
+/* 优化表格样式 */
+.vp-doc table {
+  margin: 20px 0;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .vp-doc {
+    padding: 0 16px;
+  }
+}
+
+/* 加载动画优化 */
+.vp-doc img {
+  transition: opacity 0.3s ease;
+}
+
+.vp-doc img[loading="lazy"] {
+  opacity: 0;
+}
+
+.vp-doc img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* 打印样式优化 */
+@media print {
+  .vp-nav,
+  .vp-sidebar,
+  .vp-doc-footer {
+    display: none !important;
+  }
+  
+  .vp-doc {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

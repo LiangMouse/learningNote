@@ -1,2 +1,11 @@
+node_modules/
+.DS_Store
+dist/
+.vitepress/dist/
+.vitepress/cache/
+.temp/
+*.log
+.env
+.env.local
+.env.*.local
 .obsidian
-.vscode/*
