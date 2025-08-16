@@ -6,6 +6,16 @@
 
 肯定比不上 [官网](https://vitepress.dev/zh/guide/getting-started) 几个命令就能帮助你快速开始且专业，但我能挖掘一些我实际建站过程中遇到的一些个性化且实用点帮你最快定位问题 🙋‍♂️
 
+- 空内容文件在doc中会导致构建异常🙂‍↕️
+  ```vue
+  // 正常文件：生成有效的 Vue 组件
+    <template>
+    <div>markdown content</div>
+    </template>
+
+    // 空文件：生成空的或无效的 Vue 组件
+    <template></template> // 可能导致问题
+    ```
 ### 内容目录结构
 
 [官网](https://vitepress.dev/zh/guide/routing) 地址附上🫶
