@@ -1,5 +1,6 @@
 {
   "name": "liang-mouse-blog",
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
@@ -7,5 +8,6 @@
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.11"
-  }
+  },
+  "license": "MIT"
 }
