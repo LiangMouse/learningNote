@@ -22,19 +22,6 @@
   }
 }
 
-/* 加载动画优化 */
-.vp-doc img {
-  transition: opacity 0.3s ease;
-}
-
-.vp-doc img[loading="lazy"] {
-  opacity: 0;
-}
-
-.vp-doc img[loading="lazy"].loaded {
-  opacity: 1;
-}
-
 /* 打印样式优化 */
 @media print {
   .vp-nav,

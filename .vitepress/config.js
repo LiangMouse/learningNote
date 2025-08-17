@@ -40,7 +40,9 @@ export default defineConfig({
         text: 'HTML',
         collapsed: false,
         items: [
-          { text: 'HTML的性能优化部分', link: '/HTML/HTML性能优化点' }
+          { text: 'HTML的性能优化部分', link: '/HTML/HTML性能优化点' },
+          { text: 'Canvas基础', link: '/HTML/Canvas基础' },
+          { text: '语义化', link: '/HTML/语义化' },
         ]
       },
       {
@@ -50,8 +52,12 @@ export default defineConfig({
           { text: '多种居中布局实现', link: '/CSS/水平垂直居中布局' },
           { text: 'CSS 盒子模型', link: '/CSS/CSS盒子模型' },
           { text: 'Flex 布局', link: '/CSS/Flex布局' },
+          { text: 'Grid布局', link: '/CSS/Grid布局' },
           { text: '块级格式化上下文', link: '/CSS/块级格式上下文' },
-          { text: 'z-index 层叠上下文', link: '/CSS/z-index的深入理解' }
+          { text: 'z-index 层叠上下文', link: '/CSS/z-index的深入理解' },
+          { text: 'CSS动画', link: '/CSS/CSS动画' },
+          { text: 'CSS选择器及权重', link: '/CSS/CSS选择器及权重' },
+          { text: '重绘和回流', link: '/CSS/重绘和回流' },
         ]
       },
       {
@@ -73,7 +79,10 @@ export default defineConfig({
           { text: '判断数据类型', link: '/JavaScript/判断数据类型' },
           { text: 'null 和 undefined 的区别', link: '/JavaScript/null和undefined的区别' },
           { text: '0.1+0.2 不等于 0.3?', link: '/JavaScript/0.1+0.2不等于0.3？' },
-          { text: '==和===的差别', link: '/Javascript/==和===的差别' }
+          { text: '==和===的差别', link: '/Javascript/==和===的差别' },
+          { text: 'this指向', link: '/JavaScript/this指向' },
+          { text: 'v8引擎', link: '/JavaScript/v8引擎' },
+          { text: '模块化', link: '/JavaScript/模块化' },
         ]
       },
       {
@@ -81,7 +90,6 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: '跨域问题与解决方案', link: '/Browser/跨域问题' },
-          { text: 'HTTP 缓存', link: '/Browser/HTTP缓存' },
           { text: 'GET 和 POST 的区别', link: '/Browser/GET和POST方法的区别' },
           { text: 'CDN 的作用和原理', link: '/Browser/CDN的作用和原理' },
           { text: '从输入域名到页面显示发生了什么', link: '/Browser/从输入域名到页面显示发生了什么' },
@@ -89,26 +97,29 @@ export default defineConfig({
           { text: '登录鉴权', link: '/Browser/登录鉴权' },
           { text: '浏览器的进程和线程', link: '/Browser/浏览器的进程和线程' },
           { text: 'HTTP 常见状态码', link: '/Browser/常见状态码' },
-          { text: 'HTTP2 和 HTTP1.1 的对比', link: '/Browser/HTTP2和1.1等版本的对比' }
+          { text: '长连接和短连接', link: '/Browser/长连接和短连接' },
         ]
       },
       {
         text: 'TypeScript',
         collapsed: true,
         items: [
-          { text: 'Ts 类型基础', link: '/TypeScript/基础类型' },
-          { text: 'type 和 interface 的区别', link: '/TypeScript/type和interface' }
+          { text: 'Ts 类型基础', link: '/TypeScript/TS类型' },
+          { text: 'type 和 interface 的区别', link: '/TypeScript/type和interface' },
+          { text: '泛型', link: '/TypeScript/泛型' }
         ]
       },
       {
         text: 'Vue',
         collapsed: true,
         items: [
-          { text: 'Vue 中 key 的作用', link: '/Vue/Vue中key的作用' },
-          { text: 'Vue 数据双向绑定', link: '/Vue/Vue数据双向绑定' },
+          { text: 'Vue 中 key 的作用', link: '/Vue/Vue中Key的作用' },
+          { text: 'Vue 响应式原理', link: '/Vue/Vue响应式原理' },
           { text: 'MVVM 模式的理解', link: '/Vue/MVVM模式的理解' },
-          { text: 'v-if 与 v-show 的区别', link: '/Vue/v-if与v-show的区别' },
-          { text: 'Vue2 与 3 的区别', link: '/Vue/Vue2和Vue3的区别' }
+          { text: 'v-if 与 v-show 的区别', link: '/Vue/v-if和v-show的区别' },
+          { text: 'Vue2 与 3 的区别', link: '/Vue/Vue2和Vue3的区别' },
+          { text: 'computed和watch的区别', link: '/Vue/computed和watch的区别' },
+          { text: '组件通信', link: '/Vue/组件通信' },
         ]
       },
       {
@@ -117,7 +128,9 @@ export default defineConfig({
         items: [
           { text: '类组件和函数组件的不同', link: '/React/类组件和函数组件的不同' },
           { text: '常用 hooks', link: '/React/常用hooks' },
-          { text: 'Fiber 算法', link: '/React/Fiber架构' }
+          { text: 'Fiber 算法', link: '/React/Fiber架构' },
+          { text: 'JSX与React的关系', link: '/React/JSX与React的关系' },
+          { text: 'redux', link: '/React/redux' },
         ]
       },
       {
@@ -128,8 +141,11 @@ export default defineConfig({
           { text: 'Babel', link: '/Engineering/Babel' },
           { text: 'Jest 基础', link: '/Engineering/Jest' },
           { text: 'Webpack 基础', link: '/Engineering/Webpack基础配置' },
-          { text: 'Vite 为什么比 Webpack 快', link: '/Engineering/Vite为什么比Webpack快' },
-          { text: '深入webpack插件', link: '/Engineering/深入webpack插件' }
+          { text: 'Vite 为什么比 Webpack 快', link: '/Engineering/WebPack和Vite对比下的优缺点' },
+          { text: '深入webpack插件', link: '/Engineering/深入webpack插件' },
+          { text: 'SourceMap', link: '/Engineering/SourceMap' },
+          { text: 'git基础', link: '/Engineering/git基础' },
+          { text: '前端安全问题', link: '/Engineering/前端安全问题' },
         ]
       },
       {
@@ -137,7 +153,13 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'OSI 七层模型', link: '/计算机基础/OSI七层模型' },
-          { text: '操作系统基础扫盲', link: '/计算机基础/操作系统基础扫盲' }
+          { text: '操作系统基础扫盲', link: '/计算机基础/操作系统基础扫盲' },
+          { text: 'HTTPS协议', link: '/计算机基础/HTTPS协议' },
+          { text: 'HTTP协议', link: '/计算机基础/HTTP协议' },
+          { text: 'HTTP常见状态码', link: '/计算机基础/HTTP常见状态码' },
+          { text: 'HTTP缓存', link: '/计算机基础/HTTP缓存' },
+          { text: 'UDP和TCP的区别', link: '/计算机基础/UDP和TCP的区别' },
+          { text: 'WebSocket', link: '/计算机基础/WebSocket' },
         ]
       },
       {
@@ -145,7 +167,35 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: '前端一站式发布', link: '/场景沉淀/前端一站式发布平台' },
-          { text: '网络请求的门道', link: '/场景沉淀/请求竞态等网络请求门道' }
+          { text: '网络请求的门道', link: '/场景沉淀/请求竞态等网络请求门道' },
+          { text: '大数据渲染', link: '/场景沉淀/大数据渲染' },
+        ]
+      },
+      {
+        text: '设计模式',
+        collapsed: true,
+        items: [
+          { text: '单例模式', link: '/设计模式/单例模式' },
+          { text: '概述', link: '/设计模式/概述' }
+        ]
+      },
+      {
+        text: '框架快速上手',
+        collapsed: true,
+        items: [
+          { text: 'Nextjs入门', link: '/快速上手/Nextjs入门' },
+          { text: 'Vitepress快速上手', link: '/快速上手/Vitepress快速上手' },
+          { text: 'eggjs快速上手', link: '/快速上手/eggjs快速上手' },
+          { text: 'jenkins入门', link: '/快速上手/jenkins入门' }
+        ]
+      },
+      {
+        text: '前端趣谈',
+        collapsed: true,
+        items: [
+          { text: '切图仔->AI大佬？', link: '/前端趣谈/切图仔->AI大佬？' },
+          { text: '前端新技术', link: '/前端趣谈/前端新技术' },
+          { text: '独立开发之路', link: '/前端趣谈/独立开发之路' }
         ]
       }
     ],
@@ -182,10 +232,7 @@ export default defineConfig({
   
   // Markdown 配置
   markdown: {
-    lineNumbers: true,
-    image: {
-      lazyLoading: true
-    }
+    lineNumbers: true
   },
   
   // 头部配置 - SEO 优化

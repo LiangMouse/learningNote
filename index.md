@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /Html/HTML性能优化点
+      link: /HTML/HTML性能优化点
     - theme: alt
       text: GitHub
       link: https://github.com/LiangMouse
