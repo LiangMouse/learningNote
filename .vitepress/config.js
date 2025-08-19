@@ -90,7 +90,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: '跨域问题与解决方案', link: '/Browser/跨域问题' },
-          { text: 'GET 和 POST 的区别', link: '/Browser/GET和POST方法的区别' },
+          { text: 'GET 和 POST 的区别', link: '/Browser/GET和POST区别与其他请求' },
           { text: 'CDN 的作用和原理', link: '/Browser/CDN的作用和原理' },
           { text: '从输入域名到页面显示发生了什么', link: '/Browser/从输入域名到页面显示发生了什么' },
           { text: '浏览器存储', link: '/Browser/浏览器存储' },
