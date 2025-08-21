@@ -49,6 +49,7 @@ export default defineConfig({
         text: 'CSS',
         collapsed: true,
         items: [
+          {text: 'CSS常见面试题',link: '/CSS/CSS常见面试题'},
           { text: '多种居中布局实现', link: '/CSS/水平垂直居中布局' },
           { text: 'CSS 盒子模型', link: '/CSS/CSS盒子模型' },
           { text: 'Flex 布局', link: '/CSS/Flex布局' },
@@ -64,6 +65,7 @@ export default defineConfig({
         text: 'JavaScript',
         collapsed: true,
         items: [
+          { text: 'JS常见面试题', link: '/JavaScript/JS常见面试题'},
           { text: 'ES6 新特性', link: '/JavaScript/ES6新特性' },
           { text: '原型与原型链', link: '/JavaScript/原型与原型链' },
           { text: '事件循环', link: '/JavaScript/事件循环' },
@@ -91,7 +93,6 @@ export default defineConfig({
         items: [
           { text: '跨域问题与解决方案', link: '/Browser/跨域问题' },
           { text: 'GET 和 POST 的区别', link: '/Browser/GET和POST区别与其他请求' },
-          { text: 'CDN 的作用和原理', link: '/Browser/CDN的作用和原理' },
           { text: '从输入域名到页面显示发生了什么', link: '/Browser/从输入域名到页面显示发生了什么' },
           { text: '浏览器存储', link: '/Browser/浏览器存储' },
           { text: '登录鉴权', link: '/Browser/登录鉴权' },
@@ -153,6 +154,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'OSI 七层模型', link: '/计算机基础/OSI七层模型' },
+          {text: 'CDN作用与原理',link: '/计算机基础/CDN的作用和原理'},
           { text: '操作系统基础扫盲', link: '/计算机基础/操作系统基础扫盲' },
           { text: 'HTTPS协议', link: '/计算机基础/HTTPS协议' },
           { text: 'HTTP协议', link: '/计算机基础/HTTP协议' },
