@@ -71,7 +71,7 @@ function App() {
 }
 ```
 上述的React应用可以这样表示
--[](./img/FiberTreeExample.png)
+-[](/FiberTreeExample.png)
 
 ### DOM关系
 

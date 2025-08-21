@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "LiangMouseBlog"
   text: "欢迎来到我的知识空间"
-  tagline: "这里有我学习软件开发特别是前端的学习记录，以及知识分享，祝你开心，生活幸福🫶"
+  tagline: "这里有我学习软件开发特别是前端的学习笔记，以及知识分享，祝你开心，生活幸福🫶"
   image:
     src: /icon.png
     alt: LiangMouseBlog

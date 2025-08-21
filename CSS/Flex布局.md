@@ -1,8 +1,6 @@
 # Flex 布局
 
-CSS3 新推出的排版上下文，
-
-对父盒子使用`display: flex`进行创建
+父盒子使用`display: flex`进行创建弹性布局
 
 ## 作用
 
