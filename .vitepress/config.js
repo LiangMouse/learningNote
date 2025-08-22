@@ -190,15 +190,6 @@ export default defineConfig({
           { text: 'eggjs快速上手', link: '/快速上手/eggjs快速上手' },
           { text: 'jenkins入门', link: '/快速上手/jenkins入门' }
         ]
-      },
-      {
-        text: '前端趣谈',
-        collapsed: true,
-        items: [
-          { text: '切图仔->AI大佬？', link: '/前端趣谈/切图仔->AI大佬？' },
-          { text: '前端新技术', link: '/前端趣谈/前端新技术' },
-          { text: '独立开发之路', link: '/前端趣谈/独立开发之路' }
-        ]
       }
     ],
     
