@@ -118,7 +118,7 @@ export default defineConfig({
           { text: 'Vue 响应式原理', link: '/Vue/Vue响应式原理' },
           { text: 'MVVM 模式的理解', link: '/Vue/MVVM模式的理解' },
           { text: 'v-if 与 v-show 的区别', link: '/Vue/v-if和v-show的区别' },
-          { text: 'Vue2 与 3 的区别', link: '/Vue/Vue2和Vue3的区别' },
+          { text: 'Vue2 与Vue3 的区别', link: '/Vue/Vue2和Vue3的区别' },
           { text: 'computed和watch的区别', link: '/Vue/computed和watch的区别' },
           { text: '组件通信', link: '/Vue/组件通信' },
         ]
