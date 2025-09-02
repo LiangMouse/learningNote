@@ -36,3 +36,10 @@
     padding: 0 !important;
   }
 }
+
+/* 针对移动端设备，缩小字体大小 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}

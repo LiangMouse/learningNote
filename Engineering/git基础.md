@@ -1,5 +1,25 @@
 # git 基础
 
+## git基本原理知识
+
+git是一个分布式版本管理控制系统，支持分支、单次提交、仓库等管理粒度，用于企业等场景下的多人协作开发。
+
+### 分区概念
+Git为管理代码的可回溯性、易于管理将代码仓库分为三个主要区域
+- **工作目录** workspace 不同文件间分为未修改，已修改(M)，未被git跟踪(U)三种状态
+- **暂存区** 存放已经add但是还没有commit的文件
+- **版本库** 存储所有提交（commit）的历史记录。 分为本地版本库（.git 目录）和远程版本库（如 GitHub）。
+
+### 工作流
+Git 通过以下流程管理代码：
+
+1. 修改：在工作目录编辑文件。
+2. 暂存：用 git add 将修改移到暂存区。
+3. 提交：用 git commit 将暂存区内容保存到本地版本库，生成一个提交（带有唯一哈希值）。
+4. 同步：用 git push 将本地提交推送到远程版本库，或用 git pull 获取远程更改。
+
+快照机制：Git 记录的是文件的快照（snapshot），而非差异（diff）。每个提交存储文件的全貌，优化存储通过压缩和引用。
+分布式：每个本地仓库包含完整历史，可离线操作，远程仓库如github. gitlab. gitee等仅用于协作。
 ## 最基础SOP
 
 ```shell
@@ -9,9 +29,9 @@ git clone 'url'
 **git clone**复制远端项目文件及同步 git 分支以及log日志
 
 ```shell
-git checkout -b {new-branch-name}
+git checkout -b {new-branch-name} --track {origin/branch-name}
 ```
-在本地新建当前需求的分支 [分支命名最佳实践链接](https://graphite.dev/guides/git-branch-naming-conventions)
+在本地新建当前需求的分支 [分支命名最佳实践链接](https://graphite.dev/guides/git-branch-naming-conventions) 并跟踪指定的远程分支(直接git pull和push默认分支)
 
 ```shell
 git add .
@@ -36,5 +56,41 @@ git push origin {branch-name}
 
 ### git branch
 
+### git rebase
 
+将当前分支的提交“重放”到目标分支的顶部，改写提交历史，生成线性历史。
 
+示例：git checkout feature; git rebase main
+结果：当前分支的提交被应用到 main 的最新状态，历史呈线性。
+#### git rebase -i
+
+可以合并本地的多个commit记录，进行squash压缩合并，优化日志信息，较为常用的一种多次commit单次提交的优化方法，使整个记录更加线性可追溯。
+
+#### rebase和merge的区别
+**1. 合并方式**
+* **merge**：创建一个新的合并提交（merge commit），保留两个分支的历史。
+* **rebase**：把当前分支的提交“移到”目标分支的最新提交之后，重写提交历史。
+
+**2. 历史记录**
+
+* **merge**：历史是**分叉再合并**，提交图中会出现分支点和合并点。
+* **rebase**：历史是**线性的**，看起来像所有提交都是按顺序完成的。
+
+**3. 冲突处理**
+
+* **merge**：冲突在合并时解决一次。
+* **rebase**：可能在每次“应用”提交时遇到冲突，需要多次解决。
+
+**4. 使用场景**
+
+* **merge**：适合保留分支开发痕迹，清晰展示协作过程。
+* **rebase**：适合让历史更干净，常用在个人分支合并到主分支前。
+
+**5. 提交哈希**
+
+* **merge**：不会改变已有提交的哈希。
+* **rebase**：会重新生成新的提交哈希（因为历史被改写）。
+
+### git stash
+
+Git 中用于临时保存工作目录和暂存区更改的命令，允许你将未提交的修改（包括已跟踪文件的更改和暂存的变更）保存到栈中，以便切换分支或执行其他操作，稍后再恢复这些更改。
