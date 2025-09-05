@@ -137,18 +137,63 @@ f(11); //11
 `ES6`提供了更接近传统语言的写法，引入了`class`这个概念，作为对象的模板。通过`class`关键字，可以定义类，与多数传统语言类似。不过，`ES6`的`class`不是新的对象继承模型，它只是原型链的语法糖表现形式。
 
 ```javascript
-class Me {
-  constructor() {
-    console.log("constructor");
+class Person {
+  // 1. 静态属性（Static Property）：属于类本身，实例中不可访问
+  static species = 'Human';
+  static #defaultLanguage = 'Chinese'; // 静态私有字段
+
+  // 2. 实例私有字段（Private Field）：只能在类内部访问
+  #birthYear;
+
+  constructor(name, birthYear) {
+    // 3. 实例属性：属于每个实例
+    this.name = name;
+    this.#birthYear = birthYear;
   }
-  study() {
-    console.log("study");
+
+  // 4. Getter 访问器：用于获取属性值
+  get age() {
+    const currentYear = new Date().getFullYear();
+    // 访问私有字段
+    return currentYear - this.#birthYear;
+  }
+
+  // 5. Setter 访问器：用于设置属性值，通常进行数据验证
+  set birthYear(year) {
+    if (year > 1900 && year <= new Date().getFullYear()) {
+      this.#birthYear = year;
+    } else {
+      console.error('Invalid birth year.');
+    }
+  }
+
+  // 6. 实例方法：属于每个实例，可以访问实例属性和私有字段
+  speak() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
+
+  // 7. 静态方法（Static Method）：属于类本身，不依赖于实例
+  static getSpecies() {
+    // 访问静态私有字段
+    return `${this.species}, and our default language is ${this.#defaultLanguage}.`;
   }
 }
 
-console.log(typeof Me); //function
-let me = new Me(); //constructor
-me.study(); //study
+// --- 继承（Extends）和 Super ---
+class Coder extends Person {
+  constructor(name, birthYear, favoriteLanguage) {
+    // 8. Super：调用父类的构造函数，初始化父类的属性
+    super(name, birthYear);
+    this.favoriteLanguage = favoriteLanguage;
+  }
+
+  // 9. 方法重写（Method Override）：子类重写父类的方法
+  speak() {
+    // 调用父类的方法
+    super.speak(); 
+    console.log(`I'm a coder, and I love ${this.favoriteLanguage}.`);
+  }
+}
 ```
 
 ## Promise 对象
