@@ -29,3 +29,13 @@ yarn create next-app
 - 客户端组件 (Client Components) : 这类组件需要在文件顶部明确声明 "use client" 。它们会在服务器上进行一次预渲染（生成初始HTML），然后相关的 JavaScript 代码会发送到浏览器，在浏览器中“激活”（hydrate），变得可交互。
 
 为了表现对SSR的支持, Nextjs项目默认不引入index.html, 而是使用app/layout.tsx 对文件元数据等内容作修改，将服务端渲染贯彻始终
+
+## 服务端能力
+
+一般有两种写服务端可调用API的方式
+
+- server action
+- api router
+
+
+这两种方式，取决于是否有第三方调用，如果没有使用前者，否则后者
