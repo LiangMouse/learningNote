@@ -12,13 +12,13 @@
 ```JavaScript
 // 默认下 this 在 window，输出 undefined,传入 cat,此时输出喵喵
 let dog = {
-function eat(food) {
-console.log(`我喜欢吃${food}`)
+  function eat(food) {
+  console.log(`我喜欢吃${food}`)
 }
 food = '骨头'
 }
 let cat = {
-name = '喵喵'
+  name = '喵喵'
 }
 dog.eat.call(cat,'鱼')
 ```
@@ -29,7 +29,7 @@ dog.eat.call(cat,'鱼')
 ## apply
 
 apply 相较于 call,只有传参不同,对于上边的示例他用**数组**来传参其他部分完全相同,对于(...args)参数列表传参使用`apply`更有优越性
-dog.eat.apply(cat,['鱼','肉'])
+`dog.eat.apply(cat,['鱼','肉'])`
 
 ## bind
 
