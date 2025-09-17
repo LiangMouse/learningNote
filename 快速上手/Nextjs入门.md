@@ -37,5 +37,4 @@ yarn create next-app
 - server action
 - api router
 
-
-这两种方式，取决于是否有第三方调用，如果没有使用前者，否则后者
+这两种方式，取决于是否有第三方调用，如果没有使用前者，否则后者。另外像websocket这种必须建立网络链接的就得使用`api router`
