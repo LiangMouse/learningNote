@@ -7,7 +7,7 @@ Vue 响应式原理是实现数据驱动视图的核心机制，即当数据发�
 Vue2 的响应式基于**`Object.defineProperty()`** 实现，核心逻辑是：  
 对数据对象的**每个属性**进行遍历，通过`Object.defineProperty()`为属性添加`getter`（获取属性时触发）和`setter`（修改属性时触发）。
 
-- 当属性被访问（如在模板中使用），`getter`会将当前组件的依赖（Watcher）收集到“依赖管理器”中；
+- 当属性被访问（如在模板中使用），`getter`会将当前组件的依赖（Watcher）收集到“依赖管理器 `dep`”中；
 - 当属性被修改，`setter`会通知依赖管理器，触发所有相关依赖（组件）重新渲染。
 
 但`Object.defineProperty`的`setter`只能监听到值的内容,存在无法感知对象属性增删等操作。Vue2 不得不采取不那么优雅的方式，重写 Vue 作用域中的数组方法，如`push`、`pop`、`splice`等，以触发依赖更新。 见[源码](https://github.com/vuejs/vue/blob/v2.6.14/src/core/observer/array.js)

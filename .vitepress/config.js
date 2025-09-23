@@ -152,6 +152,7 @@ export default defineConfig({
           { text: "Fiber 算法", link: "/React/Fiber架构" },
           { text: "JSX与React的关系", link: "/React/JSX与React的关系" },
           { text: "redux", link: "/React/redux" },
+          { text: "React版本升级里程碑", link: "/React/React版本升级里程碑" },
         ],
       },
       {
