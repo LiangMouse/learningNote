@@ -110,7 +110,7 @@ export default defineConfig({
           },
           { text: "浏览器存储", link: "/Browser/浏览器存储" },
           { text: "登录鉴权", link: "/Browser/登录鉴权" },
-          { text: "浏览器的进程和线程", link: "/Browser/浏览器的进程和线程" },
+          { text: "浏览器的进程和线程", link: "/Browser/浏览器上进程架构" },
           { text: "HTTP 常见状态码", link: "/Browser/常见状态码" },
           { text: "长连接和短连接", link: "/Browser/长连接和短连接" },
         ],
