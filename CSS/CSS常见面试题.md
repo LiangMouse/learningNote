@@ -17,7 +17,7 @@ function isInViewport(element) {
 }
 ```
 
-## 画一个三角形/0.5px 线/圆形
+## 画一个三角形/0.5px 线/圆形/正方形
 
 ### 三角形
 
@@ -57,6 +57,22 @@ function isInViewport(element) {
   background: #333;
   border-radius: 50%;
 }
+```
+
+### 正方形
+
+如何设计一个基于父元素响应式改变大小的正方形？
+
+- `aspect-ratio`: 1 / 1; 宽高比
+- 利用`margin`,`padding`基于父元素进行百分比计算的特性
+
+```html
+<div clss="out">
+  <div class="square"></div>
+</div>
+
+.square { width: 50%; height: 0; /* 防止因为添加内容导致的高度溢出 */
+padding-bottom: 50%; }
 ```
 
 ## CSS 盒子模型
