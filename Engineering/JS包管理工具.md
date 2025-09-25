@@ -52,8 +52,6 @@ node_modules/react -> .pnpm/react@18.2.0/node_modules/react
 
 这里的 react 就是个软链接。
 
----
-
 #### 📌 硬链接（Hard Link）
 
 - 像**同一个文件的多个名字**。

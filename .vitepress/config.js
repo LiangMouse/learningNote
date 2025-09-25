@@ -43,6 +43,7 @@ export default defineConfig({
         items: [
           { text: "HTML的性能优化部分", link: "/HTML/HTML性能优化点" },
           { text: "语义化", link: "/HTML/语义化" },
+          { text: "HTML5 新特性", link: "/HTML/HTML5新特性" },
         ],
       },
       {

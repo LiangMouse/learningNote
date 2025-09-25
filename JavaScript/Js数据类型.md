@@ -6,10 +6,10 @@
 
 - Number
   常见问题:
+
   - [0.1+0.2 的值?](JavaScript/0.1+0.2不等于0.3？)
   - 包含 NaN.Infinity.-Infinity 这样的特殊值
-    - 其中NaN与NaN比较为false，需要用`Number.isNaN`判断。而Infinity在IEEE754中指数全为1，尾数全为0，可以用常规等号判断
-
+    - 其中 NaN 与 NaN 比较为 false，需要用`Number.isNaN`判断。而 Infinity 在 IEEE754 中指数全为 1，尾数全为 0，可以用常规等号判断
 
 - String
 
@@ -40,8 +40,6 @@
 - BigInt
   能表示任意大小的数字，但不支持小数，不能直接与`Number`做运算。不能直接转成`JSON`数据。BigInt 之间可以做加减乘除
 
----
-
 ## 引用数据类型
 
 - Object
@@ -51,21 +49,20 @@
 - Array
   [常用数组方法](JavaScript/常用数组方法)
 - Function
-  表示可调用的代码块 JS引擎内置一个[[call]]方法, 支持()来调用这个内置的`call`,但倘若不是一个function属性,()运算则会报错
+  表示可调用的代码块 JS 引擎内置一个[[call]]方法, 支持()来调用这个内置的`call`,但倘若不是一个 function 属性,()运算则会报错
 - Set
   可支持迭代的有序列表，去重且元素唯一
   - delete 删除集合中给定的值
   - add 添加一个元素
-  - has 判断某个元素是否在集合中，返回boolean值
-  
+  - has 判断某个元素是否在集合中，返回 boolean 值
 - Map
   与 Object 的区别
-  - map元素顺序由插入顺序决定，而不是键的 ASCII 码顺序
-  - map在数据量大时相较于object，在性能上有所优化
+
+  - map 元素顺序由插入顺序决定，而不是键的 ASCII 码顺序
+  - map 在数据量大时相较于 object，在性能上有所优化
   - 不同于 Obj, Map 的键可以是任意类型，值可以是任意类型
   - 键必须唯一，值可以重复
-  - map无原型链
-  
+  - map 无原型链
 
 - WeakMap
   - 键必须是对象：WeakMap 的键只能是对象（或函数），不能是原始类型（如字符串、数字等）。
