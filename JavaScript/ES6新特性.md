@@ -39,6 +39,8 @@ let { a, b } = { a: "aaa", b: "bbb" }; // 对象模型的解构 前后两个kay�
 `ES6`引入了一种新的原始数据类型`Symbol`，表示独一无二的值，最大的用法是用来定义对象的唯一属性名。
 `ES6`数据类型除了`Number`、`String`、`Boolean`、 `Object`、`null`和`undefined`，还新增了 `Symbol`。
 
+需要注意的是，由 `Symbol` 创建的对象键值对是不可迭代的，`Object.keys`等方法取不到的。
+
 ```javascript
 let s1 = Symbol("s");
 let s2 = Symbol("s");
@@ -139,8 +141,8 @@ f(11); //11
 ```javascript
 class Person {
   // 1. 静态属性（Static Property）：属于类本身，实例中不可访问
-  static species = 'Human';
-  static #defaultLanguage = 'Chinese'; // 静态私有字段
+  static species = "Human";
+  static #defaultLanguage = "Chinese"; // 静态私有字段
 
   // 2. 实例私有字段（Private Field）：只能在类内部访问
   #birthYear;
@@ -163,7 +165,7 @@ class Person {
     if (year > 1900 && year <= new Date().getFullYear()) {
       this.#birthYear = year;
     } else {
-      console.error('Invalid birth year.');
+      console.error("Invalid birth year.");
     }
   }
 
@@ -175,7 +177,9 @@ class Person {
   // 7. 静态方法（Static Method）：属于类本身，不依赖于实例
   static getSpecies() {
     // 访问静态私有字段
-    return `${this.species}, and our default language is ${this.#defaultLanguage}.`;
+    return `${this.species}, and our default language is ${
+      this.#defaultLanguage
+    }.`;
   }
 }
 
@@ -190,7 +194,7 @@ class Coder extends Person {
   // 9. 方法重写（Method Override）：子类重写父类的方法
   speak() {
     // 调用父类的方法
-    super.speak(); 
+    super.speak();
     console.log(`I'm a coder, and I love ${this.favoriteLanguage}.`);
   }
 }
