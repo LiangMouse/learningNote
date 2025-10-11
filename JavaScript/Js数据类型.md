@@ -23,7 +23,7 @@
 
   表示空值或无值
 
-  [null 和 undefined 的区别](JavaScript/null和undefined的区别及两者详解.md)
+  [null 和 undefined 的区别](JavaScript/null和undefined的区别.md)
 
 - undefined
 

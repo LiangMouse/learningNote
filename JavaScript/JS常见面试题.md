@@ -30,7 +30,7 @@ Promise 的基本概念、状态及常见用法，举例说明 Promise 的执行
 ## null 和 undefined 的区别
 
 null 和 undefined 的区别及使用场景
-[点我去看](./null和undefined的区别及两者详解.md)
+[点我去看](./null和undefined的区别.md)
 
 ## 常用数组方法
 

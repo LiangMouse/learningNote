@@ -22,53 +22,26 @@
 
 ## pnpm
 
-`pnpm` 通过软链接与硬链接结合的方式管理依赖
+- `pnpm` 通过软链接与硬链接结合的方式管理依赖
 
-```bash
-node_modules/
-  .pnpm/
-    react@18.2.0/
-    lodash@4.17.21/
-  react -> .pnpm/react@18.2.0/node_modules/react  (软链接)
-  lodash -> .pnpm/lodash@4.17.21/node_modules/lodash (软链接)
-```
+  ```bash
+  node_modules/
+    .pnpm/
+      react@18.2.0/
+      lodash@4.17.21/
+    react -> .pnpm/react@18.2.0/node_modules/react  (软链接)
+    lodash -> .pnpm/lodash@4.17.21/node_modules/lodash (软链接)
+  ```
 
-如上图，`pnpm`安装的 react.lodash 依赖会形成软链接，也就是类似快捷方式那样指向`node_modules/.pnpm`。里边的内容是扁平化处理后的硬链接，硬链接就像给一块数据起了多个名字，根本的完整解压后的数据块存到`pnpm store`全局存储中。
+  如上图，`pnpm`安装的 react.lodash 依赖会形成软链接，也就是类似快捷方式那样指向`node_modules/.pnpm`。里边的内容是扁平化处理后的硬链接，硬链接就像给一块数据起了多个名字，根本的完整解压后的数据块存到`pnpm store`全局存储中。
 
-**硬链接&软链接**
+- 冗余移除（Pruning）：`pnpm` 在安装依赖时，会移除不再需要的依赖包。当一个项目不再依赖某个包时，`pnpm` 会检测并将该包从硬盘上移除，以避免产生冗余。
 
-#### 📌 软链接（Symbolic Link）
+- 压缩存储（Content Addressable Storage）：`pnpm` 使用内容可寻址存储（Content Addressable Storage）的方式来存储已下载的依赖包。每个包都会被哈希，并用哈希值作为目录名，这样可以避免重复下载相同的包，同时也方便进行缓存和共享。
 
-- 像**快捷方式**。
-- 存的只是“目标文件的路径”。
-- 如果目标文件删掉，软链接就失效了（变成死链）。
-- 跨分区可以用（因为就是个路径）。
+- 并行安装（Parallel Installation）：`pnpm` 支持并行安装依赖包。它会同时下载和构建多个包，以加快安装速度，提高效率。
 
-例子：
-
-```
-node_modules/react -> .pnpm/react@18.2.0/node_modules/react
-```
-
-这里的 react 就是个软链接。
-
-#### 📌 硬链接（Hard Link）
-
-- 像**同一个文件的多个名字**。
-- 文件系统中，一个文件 = inode（数据块）+ 文件名。硬链接就是给同一个 inode 起多个名字。
-- 所有硬链接共享同一份实际数据。
-- 只要还有一个硬链接存在，文件数据就不会被删除。
-- 不能跨分区。
-
-例子：
-
-```
-.pnpm/react@18.2.0/node_modules/react/index.js
-```
-
-这个文件不是复制的，而是硬链接到全局 store 缓存里的 `react/index.js`。
-
-所以一个文件在磁盘里只存一份，多个项目共享。
+- 锁定文件（Lockfile）：`pnpm` 使用 `lockfile` 来记录项目的依赖关系和版本信息。这个文件会被锁定，确保在后续安装或构建过程中使用相同的依赖版本。
 
 ## yarn
 
