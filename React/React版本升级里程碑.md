@@ -16,8 +16,21 @@
 
 - 引入渐进式更新
 - React v17 支持了全新的 [JSX 转换](https://zh-hans.legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
-  - 使得无需显式导入 React 即可单独使用 JSX
-  - JSX 不再转成 React.createElement,其他框架如 Vue 下也能使用 JSX
+  - 使得无需**显式导入** React 即可单独使用 JSX
+  - JSX 运行时编译由：
+
+```javascript
+import React from "react";
+React.createElement("h1", null, "Hello");
+```
+
+    改为：
+
+```javascript
+import { jsx as _jsx } from "react/jsx-runtime";
+const element = _jsx("h1", { children: "Hello" });
+```
+
 - 事件委托
   React v17 中，React 不会再将事件处理添加到 document 上，而是将事件处理添加到渲染 React 树的根 DOM 容器中
 
@@ -32,8 +45,10 @@
 ## V 18
 
 - 正式支持 Concurrent Mode（并发模式）
+  - 用户级特性，通过`createRoot`使用
 - Render API
 - 自动批处理
+  - 在一次渲染周期内把多个 state 更新合并成一次渲染
 - 新功能（新 API）：过渡（startTransition）
 - 新的 Suspense 特性：支持 Suspense 的流式服务端渲染
 - 放弃 IE
@@ -42,7 +57,6 @@
 ## V 19
 
 - 稳定的 Server Components（RSC）与 Actions：在服务端渲染与数据变更的协作模式更完善，支持表单/按钮直接触发服务器动作（Server Actions）。
-- `use` API 稳定：在组件中直接 "等待" Promise、读取上下文；搭配 RSC/数据获取更顺滑。
 - 表单改进与新 Hook：`useFormStatus`、`useActionState` 等，简化表单提交流程与挂起状态管理。
 - 文档元数据（Document Metadata）：在组件中直接声明 `<title>`、`<meta>`、`<link>` 等，统一管理文档 head。
 - 资源/脚本加载 API：提供 `preload`、`preconnect`、`preinit` 等资源提示能力，更好地控制关键资源加载顺序。

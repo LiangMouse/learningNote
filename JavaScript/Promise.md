@@ -178,3 +178,7 @@ Promise.allSettled([promise1, promise2]).then((results) => {
   // "rejected"
 });
 ```
+
+> 参考资料
+>
+> - [A+规范-生肉]https://promisesaplus.com/

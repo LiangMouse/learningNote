@@ -1,15 +1,16 @@
-# React原生hooks
+# React 原生 hooks
 
 ## **useState**
+
 状态是变化的数据，是组件甚至前端应用的核心。useState 有传入值和函数两种参数，返回的 setState 也有传入值和传入函数两种参数。
 
 ### 什么时候使用
 
-在React中，当一个组件的某个值需要在多次渲染中保持不变，并且当这个值发生变化时需要触发组件重新渲染时，就应该使用 `useState` 钩子来管理它。
+在 React 中，当一个组件的某个值需要在多次渲染中保持不变，并且当这个值发生变化时需要触发组件重新渲染时，就应该使用 `useState` 钩子来管理它。
 
-### setState函数式更新
+### setState 函数式更新
 
-`React`哲学中讲述了他是一个倡导函数式的库,数据驱动UI,状态不变视图就不变。相似地，`setState`也提倡使用函数式更新。比如你是否清楚`setNum(prev => prev +1)`和`setNum(num + 1)`的区别？作为生产中常用到的东西，面试中常考的问题，一定要清楚两者的区别。😤
+`React`哲学中讲述了他是一个倡导函数式的库,数据驱动 UI,状态不变视图就不变。相似地，`setState`也提倡使用函数式更新。比如你是否清楚`setNum(prev => prev +1)`和`setNum(num + 1)`的区别？作为生产中常用到的东西，面试中常考的问题，一定要清楚两者的区别。😤
 
 直接下**结论** :
 当属性的新状态不依赖旧状态时，直接`setState(data)`，如获取网络请求返回的结果。
@@ -24,9 +25,8 @@
 
 直接下**结论**：
 
-* 当属性的新状态**不依赖旧状态**时，直接 `setState(data)`。比如从网络请求返回的结果来更新状态。
-* 当属性的新状态**依赖旧状态**时，需要函数式更新 `setState(prev => prev + 1)`。比如计数器以及开关的切换。
-
+- 当属性的新状态**不依赖旧状态**时，直接 `setState(data)`。比如从网络请求返回的结果来更新状态。
+- 当属性的新状态**依赖旧状态**时，需要函数式更新 `setState(prev => prev + 1)`。比如计数器以及开关的切换。
 
 **深入原理**：为什么会产生这个区别？
 
@@ -55,15 +55,16 @@
 
 ### 实际数据与心智不同问题
 
-`useState`使用不好可能因为他的批量异步特性而造成与心智不符，出现`setState`后执行仍然是`null`的bug。我已经出过两次这里的问题了🥲
+`useState`使用不好可能因为他的批量异步特性而造成与心智不符，出现`setState`后执行仍然是`null`的 bug。我已经出过两次这里的问题了 🥲
 
-可参考[官网FAQ](https://zh-hans.react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value)
+可参考[官网 FAQ](https://zh-hans.react.dev/reference/react/useState#ive-updated-the-state-but-logging-gives-me-the-old-value)
+
 ```jsx
 function handleClick() {
-  console.log(count);  // 0
+  console.log(count); // 0
 
   setCount(count + 1); // 请求使用 1 重新渲染
-  console.log(count);  // 仍然是 0!
+  console.log(count); // 仍然是 0!
 
   setTimeout(() => {
     console.log(count); // 还是 0!
@@ -71,34 +72,50 @@ function handleClick() {
   // 解决方法
   const nextCount = count + 1;
   setCount(nextCount);
-  console.log(count);     // 0
+  console.log(count); // 0
   console.log(nextCount); // 1
-
 }
 ```
 
 ## **useEffect**
 
-副作用 effect 函数是在渲染之外额外执行的一些逻辑。它是根据第二个参数的依赖数组是否变化来决定是否执行 effect，可以返回一个清理函数，会在下次 effect 执行前执行。
+副作用 `effect` 函数是在渲染之外额外执行的一些逻辑。它是根据第二个参数的依赖数组是否变化来决定是否执行 effect，可以返回一个清理函数，会在下次 effect 执行前执行。
+
+具体可查阅[官方文档](https://zh-hans.react.dev/reference/react/useEffect)
 
 ## **useLayoutEffect**
-和 useEffect 差不多，但是 useEffect 的 effect 函数是异步执行的，所以可能中间有次渲染，会闪屏，而 useLayoutEffect 则是同步执行的，所以不会闪屏，但如果计算量大可能会导致掉帧。
+
+和`useEffect`使用方法(参数)一致，场景也非常相像，下边主要讲两者区别
+
+**两者差别**
+
+`useEffect`是在页面渲染后再执行, 后者在 dom 渲染后立即执行，然后再进行页面绘制。实际上，`useLayoutEffect`相当于每次会在对应类组件`componentDidMount`的
+阶段执行，而`useEffect`在源码中是相当于会在 `commit`阶段 完成后，通过 `Scheduler` 模块或浏览器的 `MessageChannel` 安排一个异步回调，
+把 useEffect 的逻辑放进去等待执行。
+
+```shell
+render → commit → paint → effect
+render → commit → effect → paint
+```
 
 ## **useReducer**
-封装一些修改状态的逻辑到 reducer，通过 action 触发，相较于`useEffect`更适合在逻辑复杂的情况下使用。当修改深层对象的时候，创建新对象比较麻烦，可以结合 `immer`
+
+封装一些修改状态的逻辑到 reducer，通过 action 触发，相较于 `useState` 更适合在逻辑复杂的情况下使用。当修改深层对象的时候，创建新对象比较麻烦，可以结合 `immer`
 
 ## **useRef**
 
 useRef 创建一个特殊的“盒子”，这个盒子本身（即你用 const myRef = useRef(...) 声明的变量）在组件的整个生命周期中是恒定不变的。这个盒子有一个唯一的属性，叫 `current`。
 
-可以理解为一个不受React影响的对象，这个对象有一个current属性可以被赋值改变，适合
+可以理解为一个不受 React 影响的对象，这个对象有一个 current 属性可以被赋值改变，适合
 
 ## **forwardRef + useImperativeHandle**
 
 通过 forwardRef 可以从子组件转发 `ref` 到父组件，如果想自定义 ref 内容可以使用 useImperativeHandle
 
 ## **useContext**
+
 跨层组件之间传递数据可以用 Context。用 createContext 创建 context 对象，用 Provider 修改其中的值， function 组件使用 useContext 的 hook 来取值，class 组件使用 Consumer 来取值
 
-## **memo + useMemo + useCallback**
-memo 包裹的组件只有在 props 变的时候才会重新渲染，useMemo、useCallback 可以防止 props 不必要的变化，两者一般是结合用。不过当用来缓存计算结果等场景的时候，也可以单独用 useMemo、useCallback
+## **React.memo + useMemo + useCallback**
+
+memo 包裹的组件只有在 props 变(浅比较)的时候才会重新渲染，`useMemo`、`useCallback` 对组件中高计算性的内容基于`props`不变时进行缓存，区别在于 memo 缓存普通属性，`callback` 缓存函数
