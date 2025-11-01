@@ -50,19 +50,19 @@ const element = _jsx("h1", { children: "Hello" });
 - 自动批处理
   - 在一次渲染周期内把多个 state 更新合并成一次渲染
 - 新功能（新 API）：过渡（startTransition）
-- 新的 Suspense 特性：支持 Suspense 的流式服务端渲染
-- 放弃 IE
+- 新的 Suspense 特性：支持 `Suspense` 的流式服务端渲染
 - 服务端组件
 
 ## V 19
 
-- 稳定的 Server Components（RSC）与 Actions：在服务端渲染与数据变更的协作模式更完善，支持表单/按钮直接触发服务器动作（Server Actions）。
+- 稳定的 `Server Components（RSC）`与 `Actions`：在服务端渲染与数据变更的协作模式更完善，支持表单/按钮直接触发服务器动作（Server Actions）。
 - 表单改进与新 Hook：`useFormStatus`、`useActionState` 等，简化表单提交流程与挂起状态管理。
 - 文档元数据（Document Metadata）：在组件中直接声明 `<title>`、`<meta>`、`<link>` 等，统一管理文档 head。
 - 资源/脚本加载 API：提供 `preload`、`preconnect`、`preinit` 等资源提示能力，更好地控制关键资源加载顺序。
 - Web Components 互操作增强：改进事件、属性/布尔属性、表单关联自定义元素的支持，集成成本更低。
 - Ref 清理函数：Ref 回调可返回清理函数，组件卸载或依赖变化时进行资源回收。
 - 默认并发能力与自动批处理优化：进一步减少不必要渲染，交互更流畅。
+- [React compiler](https://zh-hans.react.dev/learn/react-compiler)，构建时的代码自动性能优化器，自动进行记忆化缓存提升性能。
 
 代码片段：
 

@@ -33,13 +33,26 @@ apply 相较于 call,只有传参不同,对于上边的示例他用**数组**来
 
 ## bind
 
-bind 相较于 call,区别在于他不会立即调用，而是仅仅返回修改后的函数
+bind 相较于 call,区别在于他不会立即调用，而是仅仅返回新函数，新函数的 this 绑定到其的第一个参数，且不能再次修改
 
 ```JavaScript
-dog.eat.call(cat,'鱼','肉')
-//上下代码相同
-let fun = dog.eat.bind(cat,'鱼','肉')
-fun()
+function greet() {
+  return `你好，我是 ${this.name}`;
+}
+
+let person1 = { name: 'Alice' };
+let person2 = { name: 'Bob' };
+
+// 创建一个与 `person1` 绑定的函数
+let greetPerson1 = greet.bind(person1);
+
+console.log(greetPerson1()); // 你好，我是 Alice
+
+// 尝试使用 `call` 方法更改上下文；但是，它仍然使用 `person1` 作为 `this` 上下文
+console.log(greetPerson1.call(person2)); // 你好，我是 Alice
+
+// 相比之下，正常函数调用允许使用 `call` 方法设置 `this` 上下文
+console.log(greet.call(person2)); // 你好，我是 Bob
 ```
 
 优点：多重继承 缺点：只能继承父类实例的属性和方法，不能继承原型上的属性和方法

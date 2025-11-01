@@ -69,19 +69,54 @@
   - 弱引用：WeakMap 的键是 弱引用，如果没有其他引用指向这个键，对应的键值对会被自动垃圾回收。
   - 无迭代能力：WeakMap 不支持遍历，无法枚举键或值。
 
-### 常用类型转换
+## 其他分类
 
-- 字符串转数字: `+`
+### 是否可迭代
 
-```JavaScript
-var arr = [0];
-if(arr) { // arr转换成boolean的true
-  console.log(arr == true); // 对象和数字或字符串或布尔值比较，对象会先转换成原始值(先valueOf()再toString())arr的toString相当于arr的join，转换成了0.然后0与true比较，true转换成1,0不等于1返回false
-} else {
-  console.log(a);
+一个变量是否可迭代，取决于它是否实现了 `ECMAScript` 的 **“迭代器协议（iterator protocol）**”——即是否拥有 `Symbol.iterator` 方法。
+
+具体如下代码
+
+```javascript
+const obj = {
+  [Symbol.iterator]() {
+    // 必须返回一个“迭代器对象”
+    return {
+      next() {
+        return { value: 任意值, done: true / false };
+      },
+    };
+  },
+};
+```
+
+判断是否可迭代
+
+```javascript
+// 判断是否是可迭代对象
+function isIterable(value) {
+  return value != null && typeof value[Symbol.iterator] === "function";
 }
 ```
 
-### 隐式数据类型转化
+**可迭代类型**
 
-1. 加法操作符，数字加 bool 会把 bool 转换成数字
+- Array
+- String
+- Map
+- Set
+- arguments(类数组对象)
+- NodeList
+- Generater
+
+需要注意的是`Object` **不是可迭代对象**
+
+**可迭代类型可使用方法**
+
+- Array.from(iterable)
+- ...解构操作符
+- for...of 遍历
+- Promise.all, Promise.race...
+- new Map(iterable)/Set/WeakMap/WeakSet
+
+### 是否可枚举
