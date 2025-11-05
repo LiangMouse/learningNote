@@ -296,4 +296,10 @@ useRef 创建一个特殊的“盒子”，这个盒子本身（即你用 const 
 
 ### **React.memo + useMemo + useCallback**
 
-memo 包裹的组件只有在 props 变(浅比较)的时候才会重新渲染，`useMemo`、`useCallback` 对组件中高计算性的内容基于`props`不变时进行缓存，区别在于 memo 缓存普通属性，`callback` 缓存函数
+memo 包裹的组件只有在 props 变(浅比较)的时候才会重新渲染，`useMemo`、`useCallback` 对组件中高计算性的内容基于`props`不变时进行缓存，区别在于 memo 缓存普通属性或函数执行结果，`callback` 缓存函数引用(本质上 useCallback 只是在缓存函数场景下 useMemo 的语法糖)
+
+```javascript
+// 缓存函数
+useCallback(fn, deps); // better
+useMemo(() => fn, deps);
+```
