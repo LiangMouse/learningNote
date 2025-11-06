@@ -167,18 +167,12 @@ export default defineConfig({
           { text: "SourceMap", link: "/Engineering/SourceMap" },
           { text: "git基础", link: "/Engineering/git基础" },
           { text: "BFF中间层", link: "/Engineering/BFF中间层" },
-          { text: "Webpack 基础", link: "/Engineering/Webpack基础配置" },
+          { text: "Webpack 基础", link: "/Engineering/Webpack基础" },
           { text: "前端安全问题", link: "/Engineering/前端安全问题" },
           { text: "JS模块化方案", link: "/Engineering/JS模块化方案" },
           { text: "深入webpack插件", link: "/Engineering/深入webpack插件" },
-          {
-            text: "Vite 为什么比 Webpack 快",
-            link: "/Engineering/WebPack和Vite对比",
-          },
-          {
-            text: "为什么要使用构建工具",
-            link: "/Engineering/为什么要用构建工具",
-          },
+          { text: "tree-shaking树摇", link: "/Engineering/tree-shaking树摇" },
+          { text: "vite基础", link: "/Engineering/vite基础" },
         ],
       },
       {
