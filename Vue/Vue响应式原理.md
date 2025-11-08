@@ -45,3 +45,145 @@ Vue3 的响应式基于**`Proxy`** 实现，核心逻辑是：
 
 4. **更简洁的代码逻辑**  
    无需重写数组方法，响应式实现代码更简洁，维护成本更低。
+
+## 实操篇
+
+**Vue2 的更新响应收集**
+
+```javascript
+function defineReactive(obj) {
+  // 1. 判断是否为对象，如果不是对象或者为 null，则直接返回
+  if (typeof obj !== "object" || obj === null) {
+    return;
+  }
+  // 2. 遍历对象的所有属性
+  Object.keys(obj).forEach((key) => {
+    // 内部保留一个变量来存储属性的实际值
+    let value = obj[key];
+
+    // 3. 递归处理：如果属性值仍然是一个对象，则继续使其响应式
+    defineReactive(value);
+
+    // 4. 使用 Object.defineProperty 重新定义属性
+    Object.defineProperty(obj, key, {
+      enumerable: true, // 可枚举（允许 for...in 循环）
+      configurable: true, // 可配置（允许再次 defineProperty）
+
+      /**
+       * 拦截“读”操作
+       */
+      get() {
+        console.log(`[依赖收集]：正在访问属性 ${key}，值为：${value}`);
+        // 在 Vue 的真实实现中，这里会执行依赖收集（比如 Dep.depend()）
+        return value;
+      },
+
+      /**
+       * 拦截“写”操作
+       */
+      set(newValue) {
+        // 5. 如果新值和旧值相同，则不执行任何操作
+        if (newValue === value) {
+          return;
+        }
+
+        console.log(
+          `[派发更新]：正在修改属性 ${key}，旧值：${value}，新值：${newValue}`
+        );
+        value = newValue; // 更新内部保留的值
+
+        // 6. 递归处理：如果新赋的值是一个对象，也需要将其变为响应式
+        defineReactive(newValue);
+
+        // 在 Vue 的真实实现中，这里会执行派发更新（比如 Dep.notify()）
+      },
+    });
+  });
+}
+```
+
+**Vue3 响应式对象**
+
+```javascript
+/**
+ * 使一个对象变为响应式（Vue 3 Proxy 实现）
+ * @param {object} target - 需要变为响应式的原始对象
+ */
+function reactive(target) {
+  // 1. 同样，只处理对象
+  if (typeof target !== "object" || target === null) {
+    return target;
+  }
+
+  // 2. 创建 Proxy 处理器（handler）
+  const handler = {
+    /**
+     * 拦截“读”操作
+     * @param {object} target - 原始对象
+     * @param {string|symbol} key - 访问的属性名
+     * @param {object} receiver - 代理对象本身
+     */
+    get(target, key, receiver) {
+      console.log(`[依赖收集]：正在访问属性 ${String(key)}`);
+
+      // 使用 Reflect.get 来安全地获取原始值（this指向代理对象），与Proxy搭配使用
+      const value = Reflect.get(target, key, receiver);
+
+      // 3. 核心：递归与懒处理
+      // 如果访问的属性值仍然是一个对象，则递归地将其也变为 reactive
+      if (typeof value === "object" && value !== null) {
+        return reactive(value);
+      }
+
+      return value;
+    },
+
+    /**
+     * 拦截“写”操作（包括修改和新增）
+     * @param {object} target - 原始对象
+     * @param {string|symbol} key - 修改的属性名
+     * @param {*} newValue - 新的属性值
+     * @param {object} receiver - 代理对象本身
+     */
+    set(target, key, newValue, receiver) {
+      // 4. 判断是“修改”还是“新增”
+      const hadKey = Object.prototype.hasOwnProperty.call(target, key);
+      const action = hadKey ? "修改" : "新增";
+
+      const oldValue = Reflect.get(target, key, receiver);
+
+      // 5. 只有值真正改变时才触发更新
+      if (oldValue === newValue) {
+        return true; // set 必须返回一个布尔值
+      }
+
+      // 使用 Reflect.set 来安全地设置新值
+      const result = Reflect.set(target, key, newValue, receiver);
+
+      console.log(
+        `[派发更新]：正在 ${action} 属性 ${String(key)}，新值为：${newValue}`
+      );
+      // 在 Vue 真实实现中，这里会执行派发更新（trigger）
+
+      return result;
+    },
+
+    /**
+     * 拦截“删除”操作
+     * @param {object} target - 原始对象
+     * @param {string|symbol} key - 删除的属性名
+     */
+    deleteProperty(target, key) {
+      console.log(`[派发更新]：正在删除属性 ${String(key)}`);
+
+      // 使用 Reflect.deleteProperty 来安全地删除属性
+      const result = Reflect.deleteProperty(target, key);
+      // 派发更新...
+      return result;
+    },
+  };
+
+  // 3. 返回这个对象的代理
+  return new Proxy(target, handler);
+}
+```
