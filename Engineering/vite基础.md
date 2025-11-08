@@ -48,7 +48,7 @@ Vite 的热更新响应极快，是在开发过程中修改代码后可即刻作
       **HMR 运行时（HMR Runtime）**： 客户端代码中真正执行“热替换”逻辑的部分。
 
   3.  框架插件（例如 @vitejs/plugin-vue）：
-      它们为 HMR 提供了“上层逻辑”。例如，Vue 插件知道如何替换一个 Vue 组件的 <script> 或 <template> 部分，同时保留其内部状态（state）。
+      它们为 HMR 提供了“上层逻辑”。例如，Vue 插件知道如何替换一个 Vue 组件的`<script>` 或 `<template>` 部分，同时保留其内部状态（state）。
 
 - 步骤:
 
