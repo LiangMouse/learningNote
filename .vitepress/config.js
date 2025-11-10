@@ -124,7 +124,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "泛型", link: "/TypeScript/泛型" },
-          { text: "Ts 类型基础", link: "/TypeScript/TS类型" },
+          { text: "Ts 类型基础", link: "/TypeScript/TS基本类型与类型计算" },
           {
             text: "type 和 interface 的区别",
             link: "/TypeScript/type和interface",
@@ -197,6 +197,7 @@ export default defineConfig({
           { text: "大数据渲染", link: "/场景沉淀/大数据渲染" },
           { text: "前端一站式发布", link: "/场景沉淀/前端一站式发布平台" },
           { text: "网络请求的门道", link: "/场景沉淀/请求竞态等网络请求门道" },
+          { text: "浅谈性能优化", link: "/场景沉淀/性能优化" },
         ],
       },
       {
