@@ -117,6 +117,7 @@ export default defineConfig({
             text: "从输入域名到页面显示发生了什么",
             link: "/Browser/从输入域名到页面显示发生了什么",
           },
+          { text: "浏览器渲染流水线", link: "/Browser/浏览器渲染流水线" },
         ],
       },
       {
@@ -198,6 +199,7 @@ export default defineConfig({
           { text: "前端一站式发布", link: "/场景沉淀/前端一站式发布平台" },
           { text: "网络请求的门道", link: "/场景沉淀/请求竞态等网络请求门道" },
           { text: "浅谈性能优化", link: "/场景沉淀/性能优化" },
+          { text: "页面白屏如何排查", link: "/场景沉淀/页面白屏如何排查" },
         ],
       },
       {
