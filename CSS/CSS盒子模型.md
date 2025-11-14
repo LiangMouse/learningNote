@@ -31,3 +31,7 @@ CSS 属性`box-sizing`可以指定盒模型的类型，分为两种——标准�
 - `margin` 坍塌: 两个垂直方向上的盒子（例如两个段落元素 `<p>`）相邻时，margin 会发生合并，即两个盒子之间的间距并不是两个 margin 的总和，而是两者之中较大的那个。可以使用`BFC`来避免坍塌
 - 背景色范围: `background`的作用范围是`padding`+`content`
 - `margin`和`padding`的百分比: 这两个属性可以用百分比设定值，其中 `padding` 不论方位，他的 100%的大小等同于当前盒子的宽度。可以用这个特性来作**矩形**。而`margin`的百分比值则与父盒子绑定
+
+> outline 是什么，和 border 的区别是什么
+> outline 属性是 outline-color、outline-style、outline-width、outline-offset 的缩写
+> border 占据空间（属于盒模型的一部分），会影响布局；而 outline 不占据空间，它绘制在元素之上，不会影响布局。
