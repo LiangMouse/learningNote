@@ -151,13 +151,14 @@ export default defineConfig({
         items: [
           { text: "redux", link: "/React/redux" },
           { text: "常用 hooks", link: "/React/常用hooks" },
-          { text: "Fiber 算法", link: "/React/Fiber架构" },
+          { text: "Fiber 架构", link: "/React/Fiber架构" },
           { text: "JSX与React的关系", link: "/React/JSX与React的关系" },
           { text: "React版本升级里程碑", link: "/React/React版本升级里程碑" },
           {
             text: "类组件和函数组件的不同",
             link: "/React/类组件和函数组件的不同",
           },
+          { text: "React diff算法", link: "/React/react-diff算法" },
         ],
       },
       {
