@@ -9,7 +9,6 @@ export default defineConfig({
   base: "/",
   lang: "zh-CN",
 
-  // 忽略死链接检查（临时解决方案）
   ignoreDeadLinks: true,
 
   // 构建配置
@@ -44,6 +43,7 @@ export default defineConfig({
           { text: "语义化", link: "/HTML/语义化" },
           { text: "HTML5 新特性", link: "/HTML/HTML5新特性" },
           { text: "HTML的性能优化部分", link: "/HTML/HTML性能优化点" },
+          { text: "svg基础", link: "/HTML/svg基础" },
         ],
       },
       {
