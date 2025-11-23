@@ -95,7 +95,12 @@ const obj = {
 ```javascript
 // 判断是否是可迭代对象
 function isIterable(value) {
-  return value != null && typeof value[Symbol.iterator] === "function";
+  // 排除[]取值时出现报错
+  return (
+    value !== undefined &&
+    value !== null &&
+    typeof value[Symbol.iterator] === "function"
+  );
 }
 ```
 
@@ -120,3 +125,21 @@ function isIterable(value) {
 - new Map(iterable)/Set/WeakMap/WeakSet
 
 ### 是否可枚举
+
+可枚举关注的是对象的属性 (Keys) 是否对外“可见”。
+
+**可枚举带来的可使用方法**
+
+- for...in 循环（会遍历原型链上的可枚举属性）。
+- Object.keys()（仅遍历自身可枚举属性）。
+- JSON.stringify()。
+- Object.assign()
+
+## 数据类型转换
+
+主要分为显示数据类型转换和隐式数据转换
+
+**隐式**
+
+- 计算中
+- 对基本数据类型进行`.`和`[]`操作时的装箱
