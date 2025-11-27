@@ -175,6 +175,8 @@ export default defineConfig({
           { text: "深入webpack插件", link: "/Engineering/深入webpack插件" },
           { text: "tree-shaking树摇", link: "/Engineering/tree-shaking树摇" },
           { text: "vite基础", link: "/Engineering/vite基础" },
+          { text: "SSR,CSR,SSG", link: "/Engineering/SSR_CSR_SSG" },
+          { text: "monorepo基础", link: "/Engineering/monorepo基础" },
         ],
       },
       {
