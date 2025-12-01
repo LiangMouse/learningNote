@@ -193,6 +193,7 @@ export default defineConfig({
           { text: "UDP和TCP的区别", link: "/计算机基础/UDP和TCP的区别" },
           { text: "操作系统基础扫盲", link: "/计算机基础/操作系统基础扫盲" },
           { text: "Linux扫盲", link: "/计算机基础/Linux扫盲" },
+          { text: "OAuth2.0", link: "/计算机基础/OAuth2.0基础" },
         ],
       },
       {
