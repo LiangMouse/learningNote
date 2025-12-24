@@ -49,6 +49,7 @@ const element = _jsx("h1", { children: "Hello" });
 - Render API
 - 自动批处理
   - 在一次渲染周期内把多个 state 更新合并成一次渲染
+  - 从先前“只有事件处理函数能用”推广到了“所有地方都能用”
 - 新功能（新 API）：过渡（startTransition）
 - 新的 Suspense 特性：支持 `Suspense` 的流式服务端渲染
 - 服务端组件

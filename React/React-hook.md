@@ -303,3 +303,5 @@ memo 包裹的组件只有在 props 变(浅比较)的时候才会重新渲染，
 useCallback(fn, deps); // better
 useMemo(() => fn, deps);
 ```
+
+> 除缓存提升性能外， `useMemo`还可以处理纯函数组件背景下的随机数问题
